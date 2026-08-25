@@ -41,10 +41,14 @@ nav{position:fixed;top:34px;left:0;right:0;z-index:100;height:74px;display:flex;
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--text2)}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:108px}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?auto=format&fit=crop&w=1800&q=80') center/cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,36,32,.55) 0%,rgba(43,36,32,.72) 100%)}
+#hero{position:relative;padding-top:108px;min-height:100vh;overflow:hidden}
+.hero-diag-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?auto=format&fit=crop&w=1800&q=80') center/cover}
+.hero-diag-text{position:relative;z-index:1;background:var(--charcoal);width:50%;min-height:calc(100vh - 108px);display:flex;flex-direction:column;justify-content:center;padding:3rem 3.5rem 3rem 4rem;clip-path:polygon(0 0,100% 0,80% 100%,0 100%);color:#fff}
+.hero-diag-text .hero-eyebrow{color:var(--gold2)}
+.hero-diag-text .hero-sub{margin:0 0 2rem}
+.hero-diag-text .hero-btns{justify-content:flex-start}
 .hero-inner{max-width:800px;margin:0 auto;padding:4rem 2rem;text-align:center;position:relative;z-index:1;color:#fff}
+@media(max-width:900px){#hero{min-height:auto}.hero-diag-photo{position:relative;height:280px}.hero-diag-text{width:100%;clip-path:none;padding:2.5rem 1.75rem;text-align:center;align-items:center;min-height:auto}.hero-diag-text .hero-eyebrow,.hero-diag-text .hero-btns{justify-content:center}}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:1.75rem}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold2)}
 h1.hero-title{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.5px}
@@ -160,9 +164,8 @@ footer{background:var(--charcoal);padding:3rem 2rem;text-align:center}
 </nav>
 
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner">
+  <div class="hero-diag-photo"></div>
+  <div class="hero-diag-text">
     <div class="hero-eyebrow">Nettoyage professionnel · Lyon</div>
     <h1 class="hero-title">Un espace impeccable,<br/>à chaque intervention.</h1>
     <p class="hero-sub">Nettoyage de bureaux, copropriétés, vitrerie et remise en état, pour professionnels et particuliers à Lyon.</p>
