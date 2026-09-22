@@ -3,293 +3,382 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Éclat Pro — Nettoyage professionnel à Saint-Ciers-sur-Gironde</title>
-<meta name="description" content="Éclat Pro, entreprise de nettoyage professionnel à Saint-Ciers-sur-Gironde. Bureaux, copropriétés, fin de chantier, vitrerie. Devis gratuit."/>
+<title>Éclat Pro — Nettoyage de locaux à Saint-Ciers-sur-Gironde</title>
+<meta name="description" content="Nettoyage de bureaux, copropriétés et locaux professionnels en Haute-Gironde. Le cahier des tâches par fréquence, la même personne à chaque passage."/>
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
+/* ---------------------------------------------------------------
+   Le propre, sans le bleu clinique qu'on met partout dès qu'il
+   s'agit de nettoyage. Blanc légèrement verdi, ardoise profonde,
+   et un vert d'eau sombre pour l'accent.
+   --------------------------------------------------------------- */
 :root{
-  --charcoal:#0e3a3f;--charcoal2:#145059;
-  --gold:#5a9e3d;--gold-dk:#44782e;--gold2:#74b854;
-  --blush:#e8f3ec;--cream:#f6faf8;
-  --text:#0e3a3f;--text2:#5c7570;--text3:#616f6b;
-  --border:#d9e6e2;--white:#fff;--green:#22c55e;
-  --t:.3s cubic-bezier(.4,0,.2,1);
+  --blanc:#ECEFEC;
+  --clair:#F6F8F6;
+  --ardoise:#141D1B;
+  --ardoise-doux:#39443F;
+  --fer:#5A6662;
+  --trait:#CDD3CF;
+  --eau:#0E6354;
+  --eau-vif:#12806D;
+  --sur-sombre:#E8EDEA;
+  --sur-sombre-doux:#96A29D;
+  --sur-sombre-accent:#57C3AA;
+  --focus:#0E6354;
 }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --blanc:#141D1B;
+    --clair:#1B2523;
+    --ardoise:#E8EDEA;
+    --ardoise-doux:#C2CAC6;
+    --fer:#909B96;
+    --trait:#2E3936;
+    --eau:#57C3AA;
+    --eau-vif:#74D6BF;
+    --sur-sombre:#1B2523;
+    --sur-sombre-doux:#454F4B;
+    --sur-sombre-accent:#0B4E43;
+    --focus:#57C3AA;
+  }
+}
+:root[data-theme="dark"]{
+  --blanc:#141D1B;
+  --clair:#1B2523;
+  --ardoise:#E8EDEA;
+  --ardoise-doux:#C2CAC6;
+  --fer:#909B96;
+  --trait:#2E3936;
+  --eau:#57C3AA;
+  --eau-vif:#74D6BF;
+  --sur-sombre:#1B2523;
+  --sur-sombre-doux:#454F4B;
+  --sur-sombre-accent:#0B4E43;
+  --focus:#57C3AA;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.serif{font-family:'Space Grotesk',sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:3.6rem}
+body{background:var(--blanc);color:var(--ardoise-doux);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.so{font-family:'Sora',system-ui,sans-serif;color:var(--ardoise);letter-spacing:-.015em}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+a{color:var(--eau)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+img{max-width:100%;display:block}
+.env{max-width:1020px;margin:0 auto;padding-inline:1.5rem}
 
-/* DEMO RIBBON */
-.demo-ribbon{position:fixed;top:0;left:0;right:0;z-index:200;background:#0f2044;color:#fff;padding:.55rem 1rem;text-align:center;font-size:.72rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap}
-.demo-ribbon a{color:#f08020;text-decoration:none;font-weight:700}
-.demo-ribbon a:hover{text-decoration:underline}
-.demo-badge{background:#f08020;color:#1a1a1a;font-size:.6rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:.15rem .55rem;border-radius:100px}
+.demo{background:var(--ardoise);color:var(--sur-sombre);padding:.5rem 1rem;text-align:center;font-size:.74rem}
+.demo a{color:var(--sur-sombre-accent);font-weight:600}
+.demo b{color:var(--sur-sombre)}
 
-/* NAV */
-nav{position:fixed;top:34px;left:0;right:0;z-index:100;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;background:rgba(250,246,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:top var(--t)}
-.n-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
-.n-mark{width:38px;height:38px;flex-shrink:0}
-.n-name{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:var(--charcoal);letter-spacing:.3px}
-.n-links{display:flex;list-style:none;align-items:center;gap:.3rem}
-.n-links a{padding:.5rem 1rem;font-size:.8rem;font-weight:600;color:var(--text2);text-decoration:none;transition:color var(--t)}
-.n-links a:hover{color:var(--charcoal)}
-.n-cta{background:var(--charcoal)!important;color:#fff!important;padding:.6rem 1.4rem!important;border-radius:100px;transition:background var(--t)!important}
-.n-cta:hover{background:var(--gold)!important;color:#fff!important}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:22px;height:1.5px;background:var(--text2)}
+.barre{position:sticky;top:0;z-index:20;background:var(--blanc);border-bottom:1px solid var(--trait)}
+.b-in{display:flex;align-items:center;gap:1.5rem;min-height:3.05rem}
+.b-marque{font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:var(--ardoise);text-decoration:none;flex-shrink:0;letter-spacing:-.01em}
+.b-liens{display:flex;gap:1.4rem;margin-left:auto}
+.b-liens a{font-size:.82rem;font-weight:500;color:var(--ardoise-doux);text-decoration:none;padding-block:.2rem;border-bottom:2px solid transparent}
+.b-liens a:hover{color:var(--ardoise);border-bottom-color:var(--eau)}
+.b-tel{font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;background:var(--eau);color:var(--clair);text-decoration:none;padding:.46rem 1rem;flex-shrink:0;white-space:nowrap;border-radius:4px}
+.b-tel:hover{background:var(--ardoise)}
+.b-court{display:none}
+@media(max-width:840px){.b-liens{display:none}.b-tel{margin-left:auto}.b-long{display:none}.b-court{display:inline}}
 
-/* HERO */
-#hero{position:relative;padding-top:108px;min-height:100vh;overflow:hidden}
-.hero-diag-photo{position:absolute;inset:0;background:url('/img/unsplash-photo-1758273238415-01ec03d9ef27.jpg') center/cover}
-.hero-diag-text{position:relative;z-index:1;background:var(--charcoal);width:50%;min-height:calc(100vh - 108px);display:flex;flex-direction:column;justify-content:center;padding:3rem 3.5rem 3rem 4rem;clip-path:polygon(0 0,100% 0,80% 100%,0 100%);color:#fff}
-.hero-diag-text .hero-eyebrow{color:var(--gold2)}
-.hero-diag-text .hero-sub{margin:0 0 2rem}
-.hero-diag-text .hero-btns{justify-content:flex-start}
-.hero-inner{max-width:800px;margin:0 auto;padding:4rem 2rem;text-align:center;position:relative;z-index:1;color:#fff}
-@media(max-width:900px){#hero{min-height:auto}.hero-diag-photo{position:relative;height:280px}.hero-diag-text{width:100%;clip-path:none;padding:2.5rem 1.75rem;text-align:center;align-items:center;min-height:auto}.hero-diag-text .hero-eyebrow,.hero-diag-text .hero-btns{justify-content:center}}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:1.75rem}
-.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold2)}
-h1.hero-title{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.5px}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.8);max-width:480px;margin:0 auto 2.75rem;line-height:1.8;font-weight:400}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-p{background:var(--gold);color:#141414;border:none;padding:1rem 2.2rem;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:all var(--t);text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;border-radius:6px}
-.btn-p:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 14px 30px rgba(176,141,87,.35)}
-.btn-s{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:1rem 2.2rem;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:all var(--t);text-decoration:none;display:inline-block;border-radius:6px}
-.btn-s:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+header{padding-block:3rem 2.3rem;border-bottom:1px solid var(--trait)}
+.titre{font-size:clamp(2.2rem,5.8vw,3.6rem);font-weight:700;line-height:1.04}
+.titre span{color:var(--eau)}
+.accroche{margin-top:1rem;font-size:1.04rem;max-width:52ch}
+.ident{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.3rem 1.5rem;font-size:.88rem}
+.ident b{color:var(--ardoise);font-weight:600}
 
-/* SECTIONS */
-.section{padding:7rem 2rem}
-.si{max-width:1120px;margin:0 auto}
-.s-tag{display:inline-flex;align-items:center;gap:.6rem;font-size:.66rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dk);margin-bottom:1rem}
-.s-tag::before{content:'';width:24px;height:1px;background:var(--gold)}
-.s-title{font-size:clamp(2rem,3.8vw,3rem);font-weight:700;color:var(--charcoal);letter-spacing:-.5px;line-height:1.15;margin-bottom:1.25rem}
-.s-sub{font-size:.95rem;color:var(--text2);line-height:1.85;max-width:560px}
-.center{text-align:center;margin-left:auto;margin-right:auto}
+.ouverture{padding-block:2.9rem;border-bottom:1px solid var(--trait);background:var(--clair)}
+.ouverture p{font-family:'Sora',sans-serif;font-size:clamp(1.35rem,3.2vw,1.95rem);font-weight:600;line-height:1.24;color:var(--ardoise);max-width:26ch;letter-spacing:-.015em}
+.ouverture .suite{font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:1rem;line-height:1.62;color:var(--ardoise-doux);max-width:58ch;margin-top:1.1rem;letter-spacing:0}
 
-/* PRESTATIONS */
-#prestations{background:var(--white)}
-.presta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:4rem}
-.presta-row{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 1.75rem;background:var(--cream);border:1px solid var(--border);border-radius:8px;transition:all var(--t)}
-.presta-row:hover{border-color:var(--gold);box-shadow:0 10px 30px rgba(176,141,87,.1)}
-.presta-name{font-size:.95rem;font-weight:600;color:var(--charcoal)}
-.presta-desc{font-size:.76rem;color:var(--text3);margin-top:.3rem}
-.presta-price{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:var(--gold-dk);white-space:nowrap;margin-left:1.5rem}.presta-note{font-size:.76rem;color:var(--text3);line-height:1.6;margin-top:1.5rem;max-width:760px}
+.sect{padding-block:3.3rem}
+.sect + .sect{border-top:1px solid var(--trait)}
+.etiq{font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--eau);margin-bottom:.5rem}
+h2{font-size:clamp(1.7rem,4vw,2.35rem);font-weight:700;line-height:1.08}
+.intro{margin-top:.6rem;max-width:58ch}
 
-/* GALERIE */
-#galerie{background:var(--blush)}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:4rem}
-.gal-item{aspect-ratio:3/4;border-radius:8px;overflow:hidden;position:relative}
-.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
-.gal-item:hover img{transform:scale(1.08)}
-.gal-item:first-child{grid-row:span 2;aspect-ratio:auto}
+/* --- le cahier --- */
+.cahier{margin-top:2.1rem;display:grid;gap:1px;background:var(--trait);border:1px solid var(--trait)}
+.freq{background:var(--blanc);padding:1.4rem 1.3rem;display:grid;grid-template-columns:11rem 1fr;gap:.4rem 1.8rem}
+.f-quand{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ardoise);line-height:1.2}
+.f-quand small{display:block;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:400;letter-spacing:.08em;color:var(--eau);text-transform:uppercase;margin-top:.3rem}
+.f-liste{list-style:none;columns:2;column-gap:2rem}
+.f-liste li{padding-left:1.1rem;position:relative;margin-bottom:.4rem;font-size:.94rem;break-inside:avoid}
+.f-liste li::before{content:'';position:absolute;left:0;top:.62em;width:.55rem;height:2px;background:var(--eau)}
+.cahier-pied{margin-top:1.2rem;font-size:.94rem;color:var(--fer);max-width:62ch}
 
-/* AVIS DEMO */
-#avis{background:var(--charcoal);color:#fff;position:relative;overflow:hidden}
-.avis-glow{position:absolute;top:-20%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(176,141,87,.18) 0%,transparent 65%)}
-#avis .s-tag{color:var(--gold2)}
-#avis .s-title{color:#fff}
-#avis .s-sub{color:rgba(255,255,255,.6)}
-.avis-demo{max-width:520px;margin:3.5rem auto 0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:2.5rem;text-align:center;position:relative;z-index:1}
-.avis-q{font-size:1rem;font-weight:600;margin-bottom:1.5rem}
-.avis-stars{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.75rem}
-.avis-star{font-size:2rem;cursor:pointer;color:rgba(255,255,255,.25);transition:all .15s ease;line-height:1}
-.avis-star:hover,.avis-star.hovered{color:var(--gold2);transform:scale(1.15)}
-.avis-result{display:none;font-size:.82rem;line-height:1.7;padding:1.25rem;border-radius:10px;text-align:left}
-.avis-result.show{display:block}
-.avis-result.positive{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#86efac}
-.avis-result.negative{background:rgba(240,128,32,.12);border:1px solid rgba(240,128,32,.3);color:#f0d8bd}
-.avis-hint{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:1.25rem}
+/* --- tarifs --- */
+.tarifs{margin-top:2rem;border-top:2px solid var(--ardoise)}
+.tar{display:grid;grid-template-columns:1fr auto;gap:.15rem 1.4rem;padding-block:1.1rem;border-bottom:1px solid var(--trait);align-items:baseline}
+.t-nom{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:600;color:var(--ardoise)}
+.t-det{display:block;font-size:.88rem;color:var(--fer);margin-top:.15rem;font-family:'IBM Plex Sans',sans-serif;font-weight:400}
+.t-prix{font-family:'IBM Plex Mono',monospace;font-size:1.02rem;font-weight:500;color:var(--ardoise);text-align:right;white-space:nowrap}
+.tar-pied{margin-top:1.1rem;font-size:.94rem;color:var(--fer);max-width:60ch}
 
-/* HORAIRES / CONTACT */
-#contact{background:var(--white)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:4rem;align-items:start}
-.horaire-list{display:flex;flex-direction:column;gap:0}
-.horaire-row{display:flex;justify-content:space-between;padding:.9rem 0;border-bottom:1px solid var(--border);font-size:.85rem}
-.horaire-day{font-weight:600;color:var(--charcoal)}
-.horaire-time{color:var(--text2)}
-.contact-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:2rem}
-.contact-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
-.contact-item:last-child{margin-bottom:0}
-.contact-icon{width:38px;height:38px;background:var(--charcoal);color:var(--gold2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;line-height:0}
-.ci-svg{width:17px;height:17px}
-.contact-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-weight:700;margin-bottom:.25rem}
-.contact-value{font-size:.9rem;color:var(--charcoal);font-weight:600}
+.vue{background:var(--ardoise)}
+.vue img{width:100%;height:clamp(210px,34vw,370px);object-fit:cover}
+.vue figcaption{font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--sur-sombre-doux);padding:.6rem 1.5rem;max-width:1020px;margin:0 auto}
 
-/* FOOTER */
-footer{background:var(--charcoal);padding:3rem 2rem;text-align:center}
-.footer-note{font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.8}
-.footer-note a{color:var(--gold2);text-decoration:none;font-weight:600}
-.footer-note a:hover{text-decoration:underline}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;margin-top:2rem}
+.bloc h3{font-family:'Sora',sans-serif;font-size:1.18rem;font-weight:700;color:var(--ardoise)}
+.bloc ul{list-style:none;margin-top:.7rem}
+.bloc li{padding-left:1.3rem;position:relative;margin-bottom:.45rem;font-size:.95rem}
+.bloc li::before{content:'';position:absolute;left:0;top:.6em;width:.6rem;height:2px;background:var(--eau)}
+.bloc.sup li::before{background:var(--fer)}
+.bloc.sup li{color:var(--fer)}
+.bloc p{margin-top:.7rem;font-size:.95rem}
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.v{opacity:1;transform:translateY(0)}
+.qa{border-top:1px solid var(--trait);padding-block:1.25rem}
+.qa:last-of-type{border-bottom:1px solid var(--trait)}
+.qa dt{font-family:'Sora',sans-serif;font-size:1.12rem;font-weight:600;color:var(--ardoise)}
+.qa dd{margin-top:.25rem;max-width:58ch;font-size:.96rem}
 
-@media(max-width:900px){
-  nav{padding:0 1.5rem}
-  .n-links{display:none}
-  .n-links.open{display:flex;flex-direction:column;position:fixed;top:108px;left:0;right:0;background:var(--cream);padding:1.5rem;border-bottom:1px solid var(--border)}
-  .hamburger{display:flex}
-  .presta-grid,.contact-grid{grid-template-columns:1fr}
-  .gal-grid{grid-template-columns:repeat(2,1fr)}
-  .gal-item:first-child{grid-row:span 1;aspect-ratio:3/4}
-  .section{padding:5rem 1.5rem}
+.avis{display:grid;grid-template-columns:auto 1fr;gap:2.2rem;align-items:center;margin-top:1.8rem}
+.note{padding-right:2.2rem;border-right:1px solid var(--trait)}
+.note b{font-family:'Sora',sans-serif;font-size:3.5rem;font-weight:700;color:var(--ardoise);line-height:.85;display:block}
+.note .et{color:var(--eau);letter-spacing:.14em;margin-top:.35rem}
+.note span{display:block;font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--fer);margin-top:.4rem}
+
+.contact{background:var(--ardoise);color:var(--sur-sombre);padding-block:3.3rem}
+.contact h2{color:var(--sur-sombre)}
+.contact .etiq{color:var(--sur-sombre-accent)}
+.c-grille{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;margin-top:1.8rem}
+.c-tel{font-family:'Sora',sans-serif;font-size:2.1rem;font-weight:700;color:var(--sur-sombre);text-decoration:none;line-height:1}
+.c-tel:hover{color:var(--sur-sombre-accent)}
+.c-note{margin-top:.8rem;color:var(--sur-sombre-doux);max-width:38ch;font-size:.95rem}
+.zone{font-size:.95rem;color:var(--sur-sombre-doux)}
+.zone div{padding-block:.32rem;border-bottom:1px solid var(--sur-sombre-doux);max-width:26rem}
+.zone div:last-child{border-bottom:0}
+.zone b{color:var(--sur-sombre);font-weight:600}
+
+footer{background:var(--ardoise);color:var(--sur-sombre-doux);font-size:.77rem;padding-block:1.5rem 2.2rem;border-top:1px solid var(--sur-sombre-doux)}
+footer a{color:var(--sur-sombre-accent)}
+
+@media(max-width:820px){.f-liste{columns:1}}
+@media(max-width:620px){
+  .freq{grid-template-columns:1fr;gap:.8rem}
+  .deux,.c-grille{grid-template-columns:1fr;gap:1.8rem}
+  .avis{grid-template-columns:1fr;gap:1.1rem}
+  .note{padding-right:0;border-right:0;border-bottom:1px solid var(--trait);padding-bottom:1rem}
 }
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
-<div class="demo-ribbon">
-  <span class="demo-badge">Exemple</span>
-  Ce site est une démonstration fictive réalisée par NovaSpot — <a href="https://novaspot.fr" target="_blank">voir novaspot.fr →</a>
-</div>
+<div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<nav id="nav">
-  <a class="n-logo" href="#hero">
-    <svg class="n-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="20" cy="20" r="19" fill="#0e3a3f"/>
-      <circle cx="20" cy="20" r="19" fill="none" stroke="#5a9e3d" stroke-width="1"/>
-      <text x="20" y="27" font-family="Space Grotesk, serif" font-size="17" font-weight="600" fill="#74b854" text-anchor="middle">EP</text>
-    </svg>
-    <span class="n-name">Éclat Pro</span>
-  </a>
-  <ul class="n-links" id="nLinks">
-    <li><a href="#prestations">Prestations</a></li>
-    <li><a href="#galerie">Galerie</a></li>
-    <li><a href="#avis">Avis</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="tel:+33478000001" class="n-cta">Demander un devis</a></li>
-  </ul>
-  <button class="hamburger" id="burger"><span></span><span></span><span></span></button>
+<nav class="barre" aria-label="Accès rapide">
+  <div class="env b-in">
+    <a class="b-marque" href="#haut">Éclat Pro</a>
+    <div class="b-liens">
+      <a href="#cahier">Le cahier</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#inclus">Inclus ou non</a>
+      <a href="#questions">Questions</a>
+    </div>
+    <a class="b-tel" href="tel:+33557000004"><span class="b-long">05 57 00 00 04</span><span class="b-court">Appeler</span></a>
+  </div>
 </nav>
 
-<section id="hero">
-  <div class="hero-diag-photo"></div>
-  <div class="hero-diag-text">
-    <div class="hero-eyebrow">Nettoyage professionnel · Saint-Ciers-sur-Gironde</div>
-    <h1 class="hero-title">Un espace impeccable,<br/>à chaque intervention.</h1>
-    <p class="hero-sub">Nettoyage de bureaux, copropriétés, vitrerie et remise en état, pour professionnels et particuliers à Saint-Ciers-sur-Gironde.</p>
-    <div class="hero-btns">
-      <a href="tel:+33478000001" class="btn-p">Demander un devis →</a>
-      <a href="#prestations" class="btn-s">Voir nos prestations</a>
+<header id="haut">
+  <div class="env">
+    <h1 class="titre">La même personne<br/>à chaque passage. <span>Vous saurez son prénom.</span></h1>
+    <p class="accroche">Dans ce métier, le turnover est la première cause de mécontentement. On a choisi de faire l'inverse : un agent attitré par site, et son remplaçant désigné à l'avance.</p>
+    <div class="ident">
+      <span><b>Éclat Pro</b></span>
+      <span>24 rue des Artisans, Saint-Ciers-sur-Gironde</span>
+      <span>Bureaux · Copropriétés · Remise en état</span>
     </div>
+  </div>
+</header>
+
+<section class="ouverture">
+  <div class="env">
+    <p>Vous savez ce qui est fait, quand, et par qui.</p>
+    <p class="suite">La plupart des contrats d'entretien tiennent en une ligne : « nettoyage des locaux, 4 h par semaine ». Personne ne sait ce que ça recouvre, et c'est exactement ce qui permet de rogner sans que ça se voie. Notre cahier des tâches est annexé au devis, tâche par tâche, avec sa fréquence. Vous pouvez le vérifier.</p>
   </div>
 </section>
 
-<section class="section" id="prestations">
-  <div class="si">
-    <div class="s-tag reveal">Nos prestations</div>
-    <h2 class="s-title reveal">Des locaux<br/>toujours nets.</h2>
-    <p class="s-sub reveal">Des interventions rigoureuses, adaptées à vos locaux et à votre activité.</p>
-    <div class="presta-grid">
-      <div class="presta-row reveal"><div><div class="presta-name">Nettoyage de bureaux</div><div class="presta-desc">Entretien régulier, contrat mensuel</div></div><div class="presta-price">Dès 28€/h HT</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Nettoyage après chantier</div><div class="presta-desc">Remise en état complète</div></div><div class="presta-price">Dès 4€/m² HT</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Vitrerie</div><div class="presta-desc">Intérieur et extérieur</div></div><div class="presta-price">Dès 4€/m² HT</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Copropriétés</div><div class="presta-desc">Parties communes, halls, escaliers</div></div><div class="presta-price">Sur devis</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Désinfection & sanitation</div><div class="presta-desc">Protocole professionnel</div></div><div class="presta-price">Dès 90€ HT</div></div>
-      <div class="presta-row reveal"><div><div class="presta-name">Remise en état fin de bail</div><div class="presta-desc">Locaux commerciaux ou habitation</div></div><div class="presta-price">Dès 6€/m² HT</div></div>
-    </div>
-    <p class="presta-note reveal">Tarifs HT, à partir de. Le devis est établi après visite des locaux : il dépend de la surface, de la fréquence et du niveau de prestation.</p>
-  </div>
-</section>
+<section class="sect" id="cahier">
+  <div class="env">
+    <div class="etiq">Le cahier des tâches</div>
+    <h2>Ce qui est fait, et à quelle fréquence</h2>
+    <p class="intro">Exemple pour un plateau de bureaux de 200 m², trois passages par semaine. Le vôtre sera établi après la visite, sur le même principe.</p>
 
-<section class="section" id="galerie">
-  <div class="si">
-    <div class="s-tag reveal">Galerie</div>
-    <h2 class="s-title reveal">Notre travail au quotidien.</h2>
-    <div class="gal-grid">
-      <div class="gal-item reveal"><img src="/img/unsplash-photo-1758273238415-01ec03d9ef27.jpg" alt="Nettoyage de locaux" loading="lazy"/></div>
-      <div class="gal-item reveal"><img src="/img/unsplash-photo-1585417238790-f6d290d6490c.jpg" alt="Entretien minutieux" loading="lazy"/></div>
-      <div class="gal-item reveal"><img src="/img/unsplash-photo-1758523670739-0d26a3ee976d.jpg" alt="Aspiration des sols" loading="lazy"/></div>
-      <div class="gal-item reveal"><img src="/img/unsplash-photo-1580256081112-e49377338b7f.jpg" alt="Matériel professionnel" loading="lazy"/></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="avis">
-  <div class="avis-glow"></div>
-  <div class="si center">
-    <div class="s-tag reveal center" style="justify-content:center">Fonctionnalité NovaSpot</div>
-    <h2 class="s-title reveal center">Comment vos clients<br/>laissent un avis.</h2>
-    <p class="s-sub reveal center">Ceci est une démo interactive du widget avis intégré à chaque site NovaSpot. Cliquez sur une étoile pour voir le comportement.</p>
-    <div class="avis-demo reveal">
-      <div class="avis-q">Comment s'est passée votre visite ?</div>
-      <div class="avis-stars" id="avisStars">
-        <span class="avis-star" data-v="1">★</span>
-        <span class="avis-star" data-v="2">★</span>
-        <span class="avis-star" data-v="3">★</span>
-        <span class="avis-star" data-v="4">★</span>
-        <span class="avis-star" data-v="5">★</span>
+    <div class="cahier">
+      <div class="freq">
+        <div class="f-quand">À chaque passage<small>3 × / semaine</small></div>
+        <ul class="f-liste">
+          <li>Vidage et changement des sacs</li>
+          <li>Aspiration des sols et moquettes</li>
+          <li>Lavage des sols durs</li>
+          <li>Désinfection des sanitaires</li>
+          <li>Réapprovisionnement papier et savon</li>
+          <li>Essuyage des bureaux dégagés</li>
+          <li>Poignées, interrupteurs, rampes</li>
+          <li>Point d'eau et coin cuisine</li>
+        </ul>
       </div>
-      <div class="avis-result positive" id="avisPositive">✓ Le lien pour déposer l'avis sur Google s'affiche en un clic. C'est ce qui fait vraiment grimper le nombre d'avis.</div>
-      <div class="avis-result negative" id="avisNegative">✓ Le lien Google reste proposé <strong>à l'identique</strong> — personne n'est jamais bloqué.<br/>✉ En plus, un canal privé s'ouvre vers le gérant : il est prévenu tout de suite et peut rappeler le client pour rattraper le coup.</div>
-      <div class="avis-hint">Widget identique sur tous les sites NovaSpot, accessible via QR code en boutique.<br/>Le lien Google est proposé à tout le monde, quelle que soit la note.</div>
+      <div class="freq">
+        <div class="f-quand">Une fois par semaine<small>le vendredi</small></div>
+        <ul class="f-liste">
+          <li>Dépoussiérage des plinthes</li>
+          <li>Nettoyage des portes vitrées intérieures</li>
+          <li>Détartrage complet des sanitaires</li>
+          <li>Extérieur du réfrigérateur et du micro-ondes</li>
+        </ul>
+      </div>
+      <div class="freq">
+        <div class="f-quand">Une fois par mois<small>premier lundi</small></div>
+        <ul class="f-liste">
+          <li>Dépoussiérage en hauteur, luminaires</li>
+          <li>Détachage des moquettes</li>
+          <li>Nettoyage des grilles de ventilation</li>
+          <li>Intérieur du réfrigérateur, sur demande</li>
+        </ul>
+      </div>
+      <div class="freq">
+        <div class="f-quand">Deux fois par an<small>avril et octobre</small></div>
+        <ul class="f-liste">
+          <li>Vitrerie intérieure et extérieure accessible</li>
+          <li>Shampooing des moquettes</li>
+          <li>Décapage et remise en cire des sols</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cahier-pied">Un cahier de passage reste sur place. L'agent le remplit et le signe à chaque intervention — vous voyez en un coup d'œil ce qui a été fait et à quelle heure, sans avoir à nous appeler pour le demander.</p>
+  </div>
+</section>
+
+<figure class="vue">
+  <img src="/img/unsplash-photo-1585417238790-f6d290d6490c.jpg" alt="Bureaux entretenus"/>
+  <figcaption>Plateau de bureaux, Saint-Ciers — trois passages hebdomadaires, agent attitré.</figcaption>
+</figure>
+
+<section class="sect" id="tarifs">
+  <div class="env">
+    <div class="etiq">Tarifs</div>
+    <h2>Les ordres de grandeur</h2>
+    <p class="intro">Prix HT. Le devis exact se fait après visite : la surface seule ne dit rien, c'est la configuration des lieux qui décide du temps.</p>
+
+    <div class="tarifs">
+      <div class="tar"><div><span class="t-nom">Entretien de bureaux</span><span class="t-det">Contrat régulier, agent attitré</span></div><div class="t-prix">dès 28 €/h HT</div></div>
+      <div class="tar"><div><span class="t-nom">Parties communes de copropriété</span><span class="t-det">Halls, escaliers, local poubelles</span></div><div class="t-prix">sur devis</div></div>
+      <div class="tar"><div><span class="t-nom">Nettoyage après chantier</span><span class="t-det">Remise en état complète avant livraison</span></div><div class="t-prix">dès 4 €/m² HT</div></div>
+      <div class="tar"><div><span class="t-nom">Vitrerie</span><span class="t-det">Intérieur et extérieur jusqu'à 3,50 m</span></div><div class="t-prix">dès 4 €/m² HT</div></div>
+      <div class="tar"><div><span class="t-nom">Désinfection, sanitation</span><span class="t-det">Protocole virucide, fiche produit fournie</span></div><div class="t-prix">dès 90 € HT</div></div>
+      <div class="tar"><div><span class="t-nom">Remise en état fin de bail</span><span class="t-det">Locaux commerciaux ou habitation</span></div><div class="t-prix">dès 6 €/m² HT</div></div>
+    </div>
+    <p class="tar-pied">Pas d'engagement de durée. Résiliation avec un mois de préavis, de votre côté comme du nôtre — si le travail ne vous convient pas, vous n'êtes pas prisonnier d'un an de contrat.</p>
+  </div>
+</section>
+
+<section class="sect" id="inclus">
+  <div class="env">
+    <div class="etiq">Le détail qui fâche</div>
+    <h2>Ce qui est compris, et ce qui est facturé en plus</h2>
+
+    <div class="deux">
+      <div class="bloc">
+        <h3>Compris dans le tarif horaire</h3>
+        <ul>
+          <li>Tous les produits d'entretien</li>
+          <li>Le matériel, aspirateur et autolaveuse</li>
+          <li>Les sacs poubelle</li>
+          <li>L'encadrement et les contrôles qualité</li>
+          <li>Le remplacement en cas d'absence</li>
+        </ul>
+        <p>Vous ne recevrez jamais une ligne « fournitures » en fin de mois.</p>
+      </div>
+      <div class="bloc sup">
+        <h3>Facturé en supplément</h3>
+        <ul>
+          <li>Le papier toilette et le savon, au prix coûtant</li>
+          <li>Les interventions exceptionnelles hors cahier</li>
+          <li>Le travail le dimanche et les jours fériés, +50 %</li>
+          <li>Le décapage de sol, si non prévu au contrat</li>
+        </ul>
+        <p>Chaque supplément fait l'objet d'un accord écrit avant intervention. Jamais de découverte sur la facture.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="contact">
-  <div class="si">
-    <div class="s-tag reveal">Infos pratiques</div>
-    <h2 class="s-title reveal">Horaires & contact.</h2>
-    <div class="contact-grid">
-      <div class="reveal-l">
-        <div class="horaire-list">
-          <div class="horaire-row"><div class="horaire-day">Lundi — Vendredi</div><div class="horaire-time">7h00 – 19h00</div></div>
-          <div class="horaire-row"><div class="horaire-day">Samedi</div><div class="horaire-time">Sur rendez-vous</div></div>
-          <div class="horaire-row"><div class="horaire-day">Dimanche</div><div class="horaire-time">Fermé</div></div>
-          <div class="horaire-row"><div class="horaire-day">Interventions d'urgence</div><div class="horaire-time">Nous consulter</div></div>
-        </div>
+<section class="sect" id="questions">
+  <div class="env">
+    <div class="etiq">Questions</div>
+    <h2>Ce que demandent les gestionnaires</h2>
+    <dl>
+      <div class="qa">
+        <dt>« Que se passe-t-il si votre agent est absent ? »</dt>
+        <dd>Un remplaçant nommé est désigné dès la signature, et il vient faire un passage en doublon dans le premier mois. Il connaît donc vos locaux avant d'y aller seul.</dd>
       </div>
-      <div class="contact-card reveal-r">
-        <div class="contact-item">
-          <div class="contact-icon"><svg class="ci-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-          <div><div class="contact-label">Adresse</div><div class="contact-value">24 rue des Artisans, 33820 Saint-Ciers-sur-Gironde</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><svg class="ci-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h3l1.5 4.5-2 1.3a12 12 0 0 0 5.2 5.2l1.3-2L20 13.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 6.2 2 2 0 0 1 6.5 3z"/></svg></div>
-          <div><div class="contact-label">Téléphone</div><div class="contact-value">05 57 00 00 00</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><svg class="ci-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></div>
-          <div><div class="contact-label">Email</div><div class="contact-value">contact@eclatpro-demo.fr</div></div>
-        </div>
+      <div class="qa">
+        <dt>« Vous intervenez en dehors des heures de bureau ? »</dt>
+        <dd>Oui, c'est même le cas le plus fréquent : entre 6 h et 8 h, ou après 18 h. Pour les copropriétés, en journée.</dd>
+      </div>
+      <div class="qa">
+        <dt>« Comment on vous signale un problème ? »</dt>
+        <dd>Un numéro direct, pas un standard. Si c'est signalé avant midi, c'est repris au passage suivant. Si c'est sérieux, on se déplace dans la journée sans facturer.</dd>
+      </div>
+      <div class="qa">
+        <dt>« Vos agents sont déclarés ? »</dt>
+        <dd>Tous en CDI. L'attestation de vigilance URSSAF est jointe au devis et renouvelée tous les six mois sans que vous ayez à la réclamer — c'est votre responsabilité de donneur d'ordre autant que la nôtre.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="sect">
+  <div class="env">
+    <div class="etiq">Avis</div>
+    <h2>Ce qu'en disent les clients</h2>
+    <div class="avis">
+      <div class="note">
+        <b>4,8</b>
+        <div class="et">★★★★★</div>
+        <span>29 AVIS GOOGLE</span>
+      </div>
+      <div>
+        <p>Un QR code est collé dans le cahier de passage. Le gestionnaire scanne quand il veut, écrit deux lignes, c'est fait. Et si quelque chose cloche, le même code permet de nous alerter directement — on préfère corriger que découvrir le problème en ligne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="env">
+    <div class="etiq">Contact</div>
+    <h2>Demander une visite</h2>
+    <div class="c-grille">
+      <div>
+        <a class="c-tel" href="tel:+33557000004">05 57 00 00 04</a>
+        <p class="c-note">La visite dure vingt minutes et débouche sur un devis chiffré sous 48 h, cahier des tâches inclus. Sans engagement.</p>
+        <p class="c-note">24 rue des Artisans, 33820 Saint-Ciers-sur-Gironde</p>
+      </div>
+      <div class="zone">
+        <div><b>Zone d'intervention</b></div>
+        <div>Saint-Ciers, Braud-et-Saint-Louis, Étauliers</div>
+        <div>Blaye, Cars, Berson, Cavignac</div>
+        <div>Saint-André-de-Cubzac et Bourg sur devis</div>
+        <div><b>Horaires bureau</b> — 8 h à 17 h, du lundi au vendredi</div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p class="footer-note">Éclat Pro est un site fictif de démonstration. Modèle réalisé par <a href="https://novaspot.fr" target="_blank">NovaSpot</a>, l'agence digitale des commerces et artisans locaux.</p>
+  <div class="env">
+    Éclat Pro — 24 rue des Artisans, 33820 Saint-Ciers-sur-Gironde · SIRET 000 000 000 00000<br/>
+    Site de démonstration réalisé par <a href="https://novaspot.fr" target="_blank" rel="noopener">NovaSpot</a>. Informations fictives.
+  </div>
 </footer>
 
-<script>
-document.getElementById('burger').addEventListener('click',()=>document.getElementById('nLinks').classList.toggle('open'));
-document.querySelectorAll('#nLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nLinks').classList.remove('open')));
-
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}});},{threshold:.1});
-document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
-
-const stars=document.querySelectorAll('.avis-star');
-const posBox=document.getElementById('avisPositive');
-const negBox=document.getElementById('avisNegative');
-stars.forEach(star=>{
-  star.addEventListener('mouseenter',()=>{
-    const v=+star.dataset.v;
-    stars.forEach(s=>s.classList.toggle('hovered',+s.dataset.v<=v));
-  });
-  star.addEventListener('mouseleave',()=>{
-    stars.forEach(s=>s.classList.remove('hovered'));
-  });
-  star.addEventListener('click',()=>{
-    const v=+star.dataset.v;
-    posBox.classList.remove('show');
-    negBox.classList.remove('show');
-    if(v>=4){posBox.classList.add('show');} else {negBox.classList.add('show');}
-  });
-});
-</script>
 </body>
 </html>
