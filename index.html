@@ -90,7 +90,8 @@ img{max-width:100%;display:block}
 .demo a{color:var(--sur-ardoise);font-weight:600}
 .demo b{color:var(--sur-ardoise)}
 
-.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(10,16,14,.70);padding-block:.9rem}
+.barre{position:sticky;top:0;left:0;right:0;z-index:40;background:rgba(10,16,14,.70);padding-block:.9rem;transition:background .25s ease}
+.barre.fixe{background:rgba(10,16,14,.96);box-shadow:0 1px 0 rgba(244,247,245,.16)}
 .b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
 .b-marque{font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;color:#F4F7F5;text-decoration:none;line-height:1.05;flex-shrink:0}
 .b-marque small{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:.56rem;font-weight:600;
@@ -99,6 +100,7 @@ img{max-width:100%;display:block}
 .b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--sur-photo-doux);
   text-decoration:none;padding-block:.3rem;border-bottom:1px solid transparent}
 .b-liens a:hover{color:#F4F7F5;border-bottom-color:#F4F7F5}
+.b-liens a.actif{color:#F4F7F5;border-bottom-color:#F4F7F5}
 .b-tel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--eau-photo);
   color:#06231C;text-decoration:none;padding:.78rem 1.25rem;white-space:nowrap;border-radius:3px}
 .b-tel:hover{background:#F4F7F5}
@@ -107,7 +109,7 @@ img{max-width:100%;display:block}
 @media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.04rem}.b-tel{padding:.66rem 1rem}}
 
 /* --- ouverture : titre en grand, action juste dessous --- */
-.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture{position:relative;min-height:calc(100svh - 3.9rem);display:flex;align-items:flex-end;overflow:hidden;margin-top:-3.9rem;padding-top:3.9rem}
 .ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ouverture .env{position:relative;z-index:2;width:100%;display:flex;align-items:center;padding-block:5rem 3rem}
 .ouv-txt{background:#FFFFFF;padding:2.8rem 2.6rem 2.4rem;max-width:min(40rem,56%);border-radius:4px;
@@ -231,9 +233,7 @@ footer a{color:var(--encre)}
   </div>
 </div>
 
-<header class="ouverture" id="haut">
-  <img src="/img/n-plateau.jpg" alt="Plateau de bureaux entretenu" width="1600" height="1067" fetchpriority="high"/>
-  <nav class="barre" aria-label="Accès rapide">
+<nav class="barre" aria-label="Accès rapide">
     <div class="env b-in">
       <a class="b-marque" href="#haut">Éclat Pro<small>Saint-Ciers-sur-Gironde</small></a>
       <div class="b-liens">
@@ -246,6 +246,10 @@ footer a{color:var(--encre)}
       <a class="b-tel" href="tel:+33557000004"><span class="b-long">05 57 00 00 04</span><span class="b-court">Appeler</span></a>
     </div>
   </nav>
+
+<header class="ouverture" id="haut">
+  <img src="/img/n-plateau.jpg" alt="Plateau de bureaux entretenu" width="1600" height="1067" fetchpriority="high"/>
+  
   <div class="env">
     <div class="ouv-txt">
       <div class="etiq">Bureaux · Copropriétés · Remise en état</div>
@@ -321,7 +325,7 @@ footer a{color:var(--encre)}
 </section>
 
 <div class="bande">
-  <figure><img src="/img/n-couloir.jpg" alt="Couloir vitré d'immeuble de bureaux" width="1300" height="867" loading="lazy" decoding="async"/><figcaption>Parties communes</figcaption></figure>
+  <figure><img src="/img/n-couloir.jpg" alt="Couloir vitré d'immeuble de bureaux" width="1300" height="1950" loading="lazy" decoding="async"/><figcaption>Parties communes</figcaption></figure>
   <figure><img src="/img/n-poste.jpg" alt="Nettoyage d'un poste de travail" width="1300" height="867" loading="lazy" decoding="async"/><figcaption>Postes dégagés</figcaption></figure>
   <figure><img src="/img/n-chariot.jpg" alt="Chariot d'entretien dans un couloir" width="1100" height="1650" loading="lazy" decoding="async"/><figcaption>Passage du matin</figcaption></figure>
 </div>
@@ -445,6 +449,39 @@ footer a{color:var(--encre)}
     try{ localStorage.setItem("ns-theme", t); }catch(e){}
     peindre(t);
   });
+})();
+</script>
+
+<script>
+/* Barre verrouillee et reperage de section.
+   - .fixe : fond plus opaque des qu'on a quitte le haut de page.
+   - .actif : le lien de la section qu'on est en train de lire.
+   Tout est en supplement : sans JavaScript la barre reste collante
+   (c'est du CSS) et les liens fonctionnent normalement. */
+(function(){
+  var barre = document.querySelector('.barre');
+  if(barre){
+    var marquer = function(){ barre.classList.toggle('fixe', window.scrollY > 24); };
+    marquer();
+    addEventListener('scroll', marquer, {passive:true});
+  }
+  var liens = [].slice.call(document.querySelectorAll('.b-liens a[href^="#"]'));
+  if(!liens.length || !('IntersectionObserver' in window)) return;
+  var parSection = {};
+  liens.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var s = document.getElementById(id);
+    if(s) parSection[id] = a;
+  });
+  var vues = {};
+  var obs = new IntersectionObserver(function(entrees){
+    entrees.forEach(function(e){ vues[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+    var meilleur = null, score = 0;
+    Object.keys(vues).forEach(function(id){ if(vues[id] > score){ score = vues[id]; meilleur = id; } });
+    liens.forEach(function(a){ a.classList.remove('actif'); });
+    if(meilleur && parSection[meilleur]) parSection[meilleur].classList.add('actif');
+  }, {rootMargin:'-20% 0px -60% 0px', threshold:[0,.25,.5,1]});
+  Object.keys(parSection).forEach(function(id){ obs.observe(document.getElementById(id)); });
 })();
 </script>
 </body>
