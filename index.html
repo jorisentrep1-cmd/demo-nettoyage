@@ -4,246 +4,269 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Éclat Pro — Nettoyage de locaux à Saint-Ciers-sur-Gironde</title>
-<meta name="description" content="Nettoyage de bureaux, copropriétés et locaux professionnels en Haute-Gironde. Le cahier des tâches par fréquence, la même personne à chaque passage."/>
+<meta name="description" content="Nettoyage de bureaux, copropriétés et locaux professionnels en Haute-Gironde. Un agent attitré par site, le cahier des tâches annexé au devis."/>
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 /* ---------------------------------------------------------------
-   Composition en tableau de service : la page se lit comme le
-   planning affiche dans le local d'entretien. Quatre colonnes de
-   frequence cote a cote, pas quatre blocs empiles.
+   Registre releve sur les entreprises de proprete les mieux notees :
+   Out of Sight tient en 403 mots et 41 % d'image, avec un titre de
+   72 px pose sur une photo et un bouton d'action juste dessous.
+   Ce secteur se vend sur la confiance, pas sur la beaute : les
+   preuves (CDI, URSSAF, agent attitre) passent avant le decor.
    --------------------------------------------------------------- */
 :root{
-  --blanc:#ECEFEC;
-  --clair:#F6F8F6;
-  --ardoise:#141D1B;
-  --ardoise-doux:#39443F;
-  --fer:#5A6662;
-  --trait:#CDD3CF;
-  --eau:#0E6354;
-  --eau-vif:#12806D;
-  --sur-sombre:#E8EDEA;
-  --sur-sombre-doux:#96A29D;
-  --sur-sombre-accent:#57C3AA;
-  --focus:#0E6354;
+  --blanc:#F7F8F7;
+  --blanc2:#ECEFEC;
+  --ardoise:#121A18;
+  --encre:#111917;
+  --encre-doux:#3D4643;
+  --fer:#5B6461;
+  --trait:#D6DBD7;
+  --eau:#0C6152;
+  --sur-ardoise:#EDF1EE;
+  --sur-ardoise-doux:#9AA5A1;
+  --sur-eau:#F2F8F5;
+  --sur-photo:#FFFFFF;
+  --sur-photo-doux:#E8EDEA;
+  --eau-photo:#66D0B5;
+  --eau-inv:#66D0B5;
+  --focus:#0C6152;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --blanc:#141D1B;
-    --clair:#1B2523;
-    --ardoise:#E8EDEA;
-    --ardoise-doux:#C2CAC6;
-    --fer:#909B96;
-    --trait:#2E3936;
-    --eau:#57C3AA;
-    --eau-vif:#74D6BF;
-    --sur-sombre:#1B2523;
-    --sur-sombre-doux:#454F4B;
-    --sur-sombre-accent:#0B4E43;
-    --focus:#57C3AA;
+    --blanc:#111715;
+    --blanc2:#19211E;
+    --ardoise:#EDF1EE;
+    --encre:#EEF2F0;
+    --encre-doux:#C3CBC7;
+    --fer:#8D9793;
+    --trait:#2A3330;
+    --eau:#5EC9AD;
+    --sur-ardoise:#151C1A;
+    --sur-ardoise-doux:#4B5551;
+    --sur-eau:#06231C;
+    --eau-inv:#0A4B3F;
+    --focus:#5EC9AD;
   }
 }
 :root[data-theme="dark"]{
-  --blanc:#141D1B;
-  --clair:#1B2523;
-  --ardoise:#E8EDEA;
-  --ardoise-doux:#C2CAC6;
-  --fer:#909B96;
-  --trait:#2E3936;
-  --eau:#57C3AA;
-  --eau-vif:#74D6BF;
-  --sur-sombre:#1B2523;
-  --sur-sombre-doux:#454F4B;
-  --sur-sombre-accent:#0B4E43;
-  --focus:#57C3AA;
+  --blanc:#111715;
+  --blanc2:#19211E;
+  --ardoise:#EDF1EE;
+  --encre:#EEF2F0;
+  --encre-doux:#C3CBC7;
+  --fer:#8D9793;
+  --trait:#2A3330;
+  --eau:#5EC9AD;
+  --sur-ardoise:#151C1A;
+  --sur-ardoise-doux:#4B5551;
+  --sur-eau:#06231C;
+  --eau-inv:#0A4B3F;
+  --focus:#5EC9AD;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:3.6rem}
-body{background:var(--blanc);color:var(--ardoise-doux);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Sora',system-ui,sans-serif;color:var(--ardoise);letter-spacing:-.015em}
-a{color:var(--eau)}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{background:var(--blanc);color:var(--encre-doux);font-family:'IBM Plex Sans',system-ui,sans-serif;
+  font-size:15px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Sora',system-ui,sans-serif;color:var(--encre);letter-spacing:-.02em}
+a{color:var(--encre)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 img{max-width:100%;display:block}
-.env{max-width:1140px;margin:0 auto;padding-inline:1.5rem}
+.env{max-width:1240px;margin:0 auto;padding-inline:1.8rem}
+.etiq{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--eau)}
 
-.demo{background:var(--ardoise);color:var(--sur-sombre);padding:.5rem 1rem;text-align:center;font-size:.74rem}
-.demo a{color:var(--sur-sombre-accent);font-weight:600}
-.demo b{color:var(--sur-sombre)}
+.demo{background:var(--ardoise);color:var(--sur-ardoise);padding:.5rem 1rem;text-align:center;font-size:.72rem}
+.demo a{color:var(--sur-ardoise);font-weight:600}
+.demo b{color:var(--sur-ardoise)}
 
-.barre{position:sticky;top:0;z-index:20;background:var(--blanc);border-bottom:1px solid var(--trait)}
-.b-in{display:flex;align-items:center;gap:1.5rem;min-height:3.05rem}
-.b-marque{font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:var(--ardoise);text-decoration:none;flex-shrink:0;letter-spacing:-.01em}
-.b-liens{display:flex;gap:1.4rem;margin-left:auto}
-.b-liens a{font-size:.82rem;font-weight:500;color:var(--ardoise-doux);text-decoration:none;padding-block:.2rem;border-bottom:2px solid transparent}
-.b-liens a:hover{color:var(--ardoise);border-bottom-color:var(--eau)}
-.b-tel{font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;background:var(--eau);color:var(--clair);text-decoration:none;padding:.46rem 1rem;flex-shrink:0;white-space:nowrap;border-radius:4px}
-.b-tel:hover{background:var(--ardoise)}
+.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(10,16,14,.70);padding-block:.9rem}
+.b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
+.b-marque{font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;color:#F4F7F5;text-decoration:none;line-height:1.05;flex-shrink:0}
+.b-marque small{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:.56rem;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--sur-photo-doux);margin-top:.2rem}
+.b-liens{display:flex;gap:1.6rem;margin-left:auto}
+.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--sur-photo-doux);
+  text-decoration:none;padding-block:.3rem;border-bottom:1px solid transparent}
+.b-liens a:hover{color:#F4F7F5;border-bottom-color:#F4F7F5}
+.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--eau-photo);
+  color:#06231C;text-decoration:none;padding:.78rem 1.25rem;white-space:nowrap;border-radius:3px}
+.b-tel:hover{background:#F4F7F5}
 .b-court{display:none}
-@media(max-width:860px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
+@media(max-width:940px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
+@media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.04rem}.b-tel{padding:.66rem 1rem}}
 
-/* --- bandeau triptyque, en ouverture --- */
-.triptyque{display:grid;grid-template-columns:repeat(3,1fr)}
-.triptyque figure{margin:0;position:relative}
-.triptyque img{width:100%;height:clamp(180px,24vw,300px);object-fit:cover}
-.triptyque figcaption{position:absolute;left:0;bottom:0;padding:.35rem .7rem;
-  font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.04em;
-  color:#E8EDEA;background:rgba(10,18,16,.86)}
-@media(max-width:720px){.triptyque{grid-template-columns:1fr 1fr}.triptyque figure:nth-child(3){display:none}}
+/* --- ouverture : titre en grand, action juste dessous --- */
+.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ouv-txt{position:relative;z-index:2;width:100%;padding-block:4.5rem 4.5rem;
+  background:linear-gradient(to top,rgba(10,16,14,.90),rgba(10,16,14,.70))}
+.ouv-txt .etiq{color:var(--eau-photo)}
+.ouverture h1{font-size:clamp(2.2rem,5.4vw,4.2rem);color:var(--sur-photo);max-width:17ch;margin-top:1rem;
+  line-height:1.06;font-weight:300}
+.ouverture h1 b{font-weight:700}
+.ouv-sous{color:var(--sur-photo-doux);margin-top:1.2rem;max-width:50ch;font-size:1rem}
+.action{display:inline-block;margin-top:1.8rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;background:var(--eau-photo);color:#06231C;text-decoration:none;padding:1rem 1.8rem;border-radius:3px}
+.action:hover{background:#F4F7F5}
+.ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.4rem;margin-top:2rem;padding-top:1.2rem;
+  border-top:1px solid rgba(244,247,245,.3);font-size:.83rem;color:var(--sur-photo-doux)}
+.ouv-pied b{color:var(--sur-photo);font-weight:600}
+@media(max-width:700px){.ouverture{min-height:88svh}.ouv-txt{padding-block:3.2rem 3rem}}
 
-/* --- titre sur deux colonnes desequilibrees --- */
-.entete{padding-block:2.6rem 2.4rem;border-bottom:2px solid var(--ardoise)}
-.entete .env{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:2.6rem;align-items:end}
-.titre{font-size:clamp(2rem,4.8vw,3.25rem);font-weight:700;line-height:1.05}
-.titre span{color:var(--eau);display:block}
-.accroche{font-size:1rem;max-width:40ch}
-.ident{margin-top:1.1rem;font-family:'IBM Plex Mono',monospace;font-size:.76rem;letter-spacing:.04em;color:var(--fer);line-height:1.9}
-.ident b{color:var(--ardoise);font-weight:500}
-@media(max-width:880px){.entete .env{grid-template-columns:1fr;gap:1.4rem;align-items:start}}
+/* --- les preuves, tout de suite --- */
+.preuves{background:var(--ardoise);color:var(--sur-ardoise-doux);padding-block:2.6rem}
+.p-grille{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem}
+.preuve b{display:block;font-family:'Sora',sans-serif;font-size:1rem;color:var(--sur-ardoise);font-weight:600}
+.preuve span{display:block;font-size:.87rem;margin-top:.3rem}
+@media(max-width:860px){.p-grille{grid-template-columns:1fr 1fr;gap:1.5rem}}
 
-/* --- le tableau de service : quatre colonnes de frequence --- */
-.service{padding-block:2.8rem}
-.chapo{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.4rem;margin-bottom:.5rem}
-.etiq{font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--eau)}
-h2{font-size:clamp(1.55rem,3.4vw,2.1rem);font-weight:700;line-height:1.1}
-.sous{margin-top:.55rem;max-width:62ch;font-size:.97rem}
+.sect{padding-block:4.6rem}
+h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.12;margin-top:.7rem;font-weight:600}
+.intro{margin-top:.9rem;max-width:56ch;font-size:.97rem}
 
-.tableau{margin-top:1.9rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem}
+/* --- le cahier, resserre --- */
+.cahier{margin-top:2.2rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.6rem}
 .colonne{border-top:3px solid var(--eau);padding-top:.9rem}
-.colonne:nth-child(2){border-top-color:var(--eau-vif)}
-.colonne:nth-child(3){border-top-color:var(--fer)}
-.colonne:nth-child(4){border-top-color:var(--trait)}
-.cf-quand{font-family:'Sora',sans-serif;font-size:1.02rem;font-weight:700;color:var(--ardoise);line-height:1.2}
-.cf-rythme{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--fer);margin-top:.28rem}
-.cf-liste{list-style:none;margin-top:.95rem;border-top:1px solid var(--trait);padding-top:.7rem}
-.cf-liste li{font-size:.9rem;line-height:1.45;padding-block:.34rem;border-bottom:1px solid var(--trait)}
-.registre{margin-top:1.7rem;display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:center;
-  background:var(--clair);border-left:3px solid var(--eau);padding:1rem 1.2rem}
-.registre b{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--eau);white-space:nowrap}
-.registre p{font-size:.94rem;max-width:72ch}
-@media(max-width:940px){.tableau{grid-template-columns:1fr 1fr;gap:1.4rem 2rem}}
-@media(max-width:560px){.tableau{grid-template-columns:1fr}.registre{grid-template-columns:1fr;gap:.5rem}}
+.cf-quand{font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;color:var(--encre)}
+.cf-rythme{font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--fer);margin-top:.3rem}
+.cf-liste{list-style:none;margin-top:.9rem}
+.cf-liste li{font-size:.9rem;padding-block:.34rem;border-bottom:1px solid var(--trait)}
+.registre{margin-top:1.8rem;background:var(--blanc2);border-left:3px solid var(--eau);padding:1rem 1.2rem;font-size:.94rem;max-width:74ch}
+@media(max-width:900px){.cahier{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.cahier{grid-template-columns:1fr}}
 
-/* --- tarifs et perimetre, cote a cote --- */
-.duo{border-top:1px solid var(--trait)}
-.duo .env{padding-block:2.8rem;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:3.2rem}
-.volet + .volet{border-left:1px solid var(--trait);padding-left:3.2rem}
-.ligne{display:grid;grid-template-columns:1fr auto;gap:.1rem 1.2rem;padding-block:.75rem;border-bottom:1px solid var(--trait);align-items:baseline}
-.ligne:first-of-type{border-top:2px solid var(--ardoise)}
-.l-nom{font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;color:var(--ardoise)}
-.l-det{display:block;font-size:.85rem;color:var(--fer);margin-top:.1rem}
-.l-prix{font-family:'IBM Plex Mono',monospace;font-size:.96rem;font-weight:500;color:var(--ardoise);text-align:right;white-space:nowrap}
-.note-bas{margin-top:1rem;font-size:.9rem;color:var(--fer);max-width:52ch}
-.volet h3{font-size:1.04rem;font-weight:700;margin-top:1.5rem}
+/* --- bande photo --- */
+.bande{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait)}
+.bande figure{margin:0;position:relative;background:var(--blanc)}
+.bande img{width:100%;height:clamp(200px,26vw,330px);object-fit:cover}
+.bande figcaption{position:absolute;left:0;bottom:0;background:rgba(10,16,14,.88);color:#EDF1EE;
+  font-size:.7rem;font-weight:600;letter-spacing:.06em;padding:.5rem .9rem}
+@media(max-width:760px){.bande{grid-template-columns:1fr 1fr}.bande figure:nth-child(3){display:none}}
+
+/* --- tarifs et perimetre --- */
+.argent{background:var(--blanc2);border-block:1px solid var(--trait);padding-block:4.6rem}
+.argent .env{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);gap:3.2rem;align-items:start}
+.ligne{display:grid;grid-template-columns:1fr auto;gap:.1rem 1.4rem;padding-block:.8rem;border-bottom:1px solid var(--trait);align-items:baseline}
+.ligne:first-of-type{border-top:2px solid var(--encre)}
+.l-nom{font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;color:var(--encre)}
+.l-det{display:block;font-size:.85rem;color:var(--fer);margin-top:.1rem;font-family:'IBM Plex Sans',sans-serif}
+.l-prix{font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;color:var(--encre);white-space:nowrap;text-align:right}
+.volet h3{font-size:1rem;font-weight:600;margin-top:1.4rem}
 .volet h3:first-child{margin-top:0}
-.volet ul{list-style:none;margin-top:.55rem}
-.volet li{padding-left:1.2rem;position:relative;margin-bottom:.34rem;font-size:.93rem}
+.volet ul{list-style:none;margin-top:.6rem}
+.volet li{padding-left:1.2rem;position:relative;margin-bottom:.34rem;font-size:.92rem}
 .volet li::before{content:'';position:absolute;left:0;top:.62em;width:.6rem;height:2px;background:var(--eau)}
 .volet .sup li{color:var(--fer)}
 .volet .sup li::before{background:var(--fer)}
-@media(max-width:880px){.duo .env{grid-template-columns:1fr;gap:2.2rem}.volet + .volet{border-left:0;padding-left:0;border-top:1px solid var(--trait);padding-top:2.2rem}}
+.note-bas{margin-top:1rem;font-size:.9rem;color:var(--fer);max-width:52ch}
+@media(max-width:880px){.argent .env{grid-template-columns:1fr;gap:2.2rem}}
 
-/* --- panneau photo pleine largeur --- */
-.panneau{position:relative;background:var(--ardoise)}
-.panneau img{width:100%;height:clamp(230px,32vw,380px);object-fit:cover}
-.plaque{position:absolute;left:0;bottom:0;background:var(--ardoise);color:var(--sur-sombre);padding:.85rem 1.4rem;max-width:34rem}
-.plaque b{font-family:'Sora',sans-serif;display:block;font-size:1rem;color:var(--sur-sombre)}
-.plaque span{font-size:.88rem;color:var(--sur-sombre-doux)}
-@media(max-width:620px){.plaque{position:static;max-width:none}}
+/* --- avis : destination du QR code imprime --- */
+.avis{background:var(--ardoise);color:var(--sur-ardoise-doux);padding-block:4.5rem}
+.avis .env{display:grid;grid-template-columns:auto minmax(0,1fr);gap:3.5rem;align-items:center}
+.avis h2{color:var(--sur-ardoise)}
+.avis .etiq{color:var(--eau-inv)}
+.note b{display:block;font-family:'Sora',sans-serif;font-size:3.8rem;font-weight:700;color:var(--sur-ardoise);line-height:.85}
+.note .et{color:var(--eau-inv);letter-spacing:.16em;font-size:1rem;margin-top:.5rem}
+.note span{display:block;font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sur-ardoise-doux);margin-top:.5rem}
+.avis p{margin-top:.8rem;max-width:58ch;font-size:.95rem}
+.chemins{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.chemin{font-size:.7rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;text-decoration:none;
+  padding:.9rem 1.4rem;border:1px solid var(--sur-ardoise);color:var(--sur-ardoise);border-radius:3px}
+.chemin.plein{background:var(--eau-inv);border-color:var(--eau-inv);color:var(--ardoise)}
+.chemin:hover{opacity:.82}
+@media(max-width:760px){.avis .env{grid-template-columns:1fr;gap:1.8rem}}
 
-/* --- questions, deux par deux --- */
-.questions{padding-block:2.8rem}
-.qgrille{margin-top:1.6rem;display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 3rem}
-.qa dt{font-family:'Sora',sans-serif;font-size:1.02rem;font-weight:600;color:var(--ardoise)}
-.qa dd{margin-top:.3rem;font-size:.94rem}
-@media(max-width:760px){.qgrille{grid-template-columns:1fr;gap:1.4rem}}
+/* --- questions --- */
+.qgrille{margin-top:1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 3rem}
+.qa dt{font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;color:var(--encre)}
+.qa dd{margin-top:.3rem;font-size:.93rem}
+@media(max-width:760px){.qgrille{grid-template-columns:1fr;gap:1.3rem}}
 
-/* --- pied sombre : avis et contact dans la meme bande --- */
-.final{background:var(--ardoise);color:var(--sur-sombre);padding-block:3rem}
-.final h2,.final .c-tel{color:var(--sur-sombre)}
-.final .etiq{color:var(--sur-sombre-accent)}
-.f-grille{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:2.8rem;align-items:start}
-.note b{font-family:'Sora',sans-serif;font-size:3.2rem;font-weight:700;color:var(--sur-sombre);line-height:.85;display:block}
-.note .et{color:var(--sur-sombre-accent);letter-spacing:.14em;margin-top:.35rem}
-.note span{display:block;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--sur-sombre-doux);margin-top:.4rem}
-.c-tel{font-family:'Sora',sans-serif;font-size:1.85rem;font-weight:700;text-decoration:none;line-height:1;display:inline-block;margin-top:.5rem}
-.c-tel:hover{color:var(--sur-sombre-accent)}
-.c-note{margin-top:.7rem;color:var(--sur-sombre-doux);font-size:.93rem;max-width:34ch}
-.zone{font-size:.92rem;color:var(--sur-sombre-doux)}
-.zone div{padding-block:.3rem;border-bottom:1px solid var(--sur-sombre-doux)}
-.zone div:last-child{border-bottom:0}
-.zone b{color:var(--sur-sombre);font-weight:600}
-@media(max-width:900px){.f-grille{grid-template-columns:1fr;gap:1.8rem}}
+/* --- contact sur photo --- */
+.contact{position:relative;overflow:hidden}
+.contact > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.c-voile{position:relative;z-index:2;background:rgba(10,16,14,.86);padding-block:4.8rem}
+.contact .env{text-align:center}
+.contact .etiq{color:var(--eau-photo)}
+.c-tel{display:inline-block;font-family:'Sora',sans-serif;font-size:clamp(2rem,4.4vw,3rem);font-weight:700;
+  color:var(--sur-photo);text-decoration:none;margin-top:.9rem;line-height:1}
+.c-tel:hover{color:var(--eau-photo)}
+.c-note{color:var(--sur-photo-doux);font-size:.95rem;margin-top:1rem;max-width:46ch;margin-inline:auto}
+.zone{margin-top:2.2rem;padding-top:1.3rem;border-top:1px solid rgba(244,247,245,.3);
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 2.4rem;font-size:.84rem;color:var(--sur-photo-doux)}
+.zone b{color:var(--sur-photo);font-weight:600}
 
-footer{background:var(--ardoise);color:var(--sur-sombre-doux);font-size:.77rem;padding-block:1.4rem 2rem;border-top:1px solid var(--sur-sombre-doux)}
-footer a{color:var(--sur-sombre-accent)}
+footer{background:var(--blanc);color:var(--fer);font-size:.76rem;padding-block:2rem 2.4rem;text-align:center}
+footer a{color:var(--encre)}
 
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.b-theme{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;padding:0;
+  flex-shrink:0;cursor:pointer;background:none;color:var(--sur-photo-doux);border:1px solid currentColor;border-radius:99px;opacity:.85}
+.b-theme:hover{opacity:1;color:var(--sur-photo)}
 
-/* --- bascule clair / sombre --- */
-.b-theme{display:inline-flex;align-items:center;justify-content:center;
-  width:2rem;height:2rem;padding:0;flex-shrink:0;cursor:pointer;
-  background:none;color:inherit;border:1px solid currentColor;border-radius:99px;opacity:.55}
-.b-theme:hover{opacity:1}
-@media(max-width:860px){.b-theme{margin-left:auto}.b-theme + .b-tel{margin-left:.5rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<nav class="barre" aria-label="Accès rapide">
-  <div class="env b-in">
-    <a class="b-marque" href="#haut">Éclat Pro</a>
-    <div class="b-liens">
-      <a href="#service">Le cahier</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#questions">Questions</a>
-      <a href="#contact">Contact</a>
+<header class="ouverture" id="haut">
+  <img src="/img/n-plateau.jpg" alt="Plateau de bureaux entretenu" width="1600" height="1067" fetchpriority="high"/>
+  <nav class="barre" aria-label="Accès rapide">
+    <div class="env b-in">
+      <a class="b-marque" href="#haut">Éclat Pro<small>Saint-Ciers-sur-Gironde</small></a>
+      <div class="b-liens">
+        <a href="#cahier">Le cahier</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
+      <a class="b-tel" href="tel:+33557000004"><span class="b-long">05 57 00 00 04</span><span class="b-court">Appeler</span></a>
     </div>
-    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
-    <a class="b-tel" href="tel:+33557000004"><span class="b-long">05 57 00 00 04</span><span class="b-court">Appeler</span></a>
-  </div>
-</nav>
-
-<div class="triptyque" id="haut">
-  <figure><img src="/img/unsplash-photo-1577412647305-991150c7d163.jpg" alt="Plateau de bureaux en open space"/><figcaption>Bureaux</figcaption></figure>
-  <figure><img src="/img/unsplash-photo-1504297050568-910d24c426d3.jpg" alt="Couloir vitré d'un immeuble de bureaux"/><figcaption>Parties communes</figcaption></figure>
-  <figure><img src="/img/unsplash-photo-1615003382357-4cb74b16a7ab.jpg" alt="Hall d'entrée d'un immeuble professionnel"/><figcaption>Halls et entrées</figcaption></figure>
-</div>
-
-<header class="entete">
-  <div class="env">
-    <h1 class="titre">La même personne à chaque passage. <span>Vous saurez son prénom.</span></h1>
-    <div>
-      <p class="accroche">Le turnover est la première cause de mécontentement dans ce métier. On fait l'inverse : un agent attitré par site, son remplaçant désigné dès la signature.</p>
-      <div class="ident">
-        <b>Éclat Pro</b> — 24 rue des Artisans, Saint-Ciers-sur-Gironde<br/>
-        Bureaux · Copropriétés · Remise en état
+  </nav>
+  <div class="ouv-txt">
+    <div class="env">
+      <div class="etiq">Bureaux · Copropriétés · Remise en état</div>
+      <h1>La même personne à chaque passage. <b>Vous saurez son prénom.</b></h1>
+      <p class="ouv-sous">Le turnover est la première cause de mécontentement dans ce métier. On fait l'inverse : un agent attitré par site, son remplaçant désigné dès la signature.</p>
+      <a class="action" href="#contact">Demander une visite</a>
+      <div class="ouv-pied">
+        <span><b>24 rue des Artisans</b>, Saint-Ciers-sur-Gironde</span>
+        <span><b>4,8</b> ★★★★★ · 29 avis</span>
       </div>
     </div>
   </div>
 </header>
 
-<section class="service" id="service">
-  <div class="env">
-    <div class="chapo">
-      <span class="etiq">Le cahier des tâches</span>
-      <h2>Ce qui est fait, et à quelle fréquence</h2>
-    </div>
-    <p class="sous">Exemple pour un plateau de 200 m², trois passages par semaine. Le cahier est annexé au devis : vous pouvez le vérifier ligne à ligne.</p>
+<section class="preuves">
+  <div class="env p-grille">
+    <div class="preuve"><b>Agent attitré</b><span>La même personne, et son remplaçant nommé dès la signature.</span></div>
+    <div class="preuve"><b>Tous en CDI</b><span>Attestation URSSAF jointe au devis, renouvelée tous les six mois.</span></div>
+    <div class="preuve"><b>Cahier annexé</b><span>Chaque tâche et sa fréquence, écrites sur le devis.</span></div>
+    <div class="preuve"><b>Sans engagement</b><span>Un mois de préavis, de votre côté comme du nôtre.</span></div>
+  </div>
+</section>
 
-    <div class="tableau">
+<section class="sect" id="cahier">
+  <div class="env">
+    <div class="etiq">Le cahier des tâches</div>
+    <h2>Ce qui est fait, et à quelle fréquence</h2>
+    <p class="intro">Exemple pour un plateau de 200 m², trois passages par semaine. Vous pouvez le vérifier ligne à ligne.</p>
+
+    <div class="cahier">
       <div class="colonne">
         <div class="cf-quand">À chaque passage</div>
         <div class="cf-rythme">3 × / semaine</div>
         <ul class="cf-liste">
           <li>Vidage et changement des sacs</li>
-          <li>Aspiration des sols et moquettes</li>
-          <li>Lavage des sols durs</li>
+          <li>Aspiration et lavage des sols</li>
           <li>Désinfection des sanitaires</li>
           <li>Papier et savon réapprovisionnés</li>
           <li>Poignées, interrupteurs, rampes</li>
@@ -256,7 +279,6 @@ footer a{color:var(--sur-sombre-accent)}
           <li>Plinthes</li>
           <li>Portes vitrées intérieures</li>
           <li>Détartrage des sanitaires</li>
-          <li>Extérieur du réfrigérateur</li>
         </ul>
       </div>
       <div class="colonne">
@@ -264,7 +286,6 @@ footer a{color:var(--sur-sombre-accent)}
         <div class="cf-rythme">premier lundi</div>
         <ul class="cf-liste">
           <li>Dépoussiérage en hauteur</li>
-          <li>Luminaires</li>
           <li>Détachage des moquettes</li>
           <li>Grilles de ventilation</li>
         </ul>
@@ -280,24 +301,27 @@ footer a{color:var(--sur-sombre-accent)}
       </div>
     </div>
 
-    <div class="registre">
-      <b>Cahier de passage</b>
-      <p>Il reste sur place. L'agent le remplit et le signe à chaque intervention : vous voyez ce qui a été fait et à quelle heure, sans avoir à nous appeler pour le demander.</p>
-    </div>
+    <p class="registre">Un cahier de passage reste sur place. L'agent le remplit et le signe à chaque intervention : vous voyez ce qui a été fait et à quelle heure, sans avoir à nous appeler.</p>
   </div>
 </section>
 
-<section class="duo" id="tarifs">
+<div class="bande">
+  <figure><img src="/img/n-couloir.jpg" alt="Couloir vitré d'immeuble de bureaux" width="1300" height="867" loading="lazy" decoding="async"/><figcaption>Parties communes</figcaption></figure>
+  <figure><img src="/img/n-poste.jpg" alt="Nettoyage d'un poste de travail" width="1300" height="867" loading="lazy" decoding="async"/><figcaption>Postes dégagés</figcaption></figure>
+  <figure><img src="/img/n-chariot.jpg" alt="Chariot d'entretien dans un couloir" width="1100" height="1650" loading="lazy" decoding="async"/><figcaption>Passage du matin</figcaption></figure>
+</div>
+
+<section class="argent" id="tarifs">
   <div class="env">
-    <div class="volet">
-      <div class="chapo"><span class="etiq">Tarifs</span><h2>Les ordres de grandeur</h2></div>
+    <div>
+      <div class="etiq">Tarifs</div>
+      <h2>Les ordres de grandeur</h2>
       <div class="ligne"><div><span class="l-nom">Entretien de bureaux</span><span class="l-det">Contrat régulier, agent attitré</span></div><div class="l-prix">dès 28 €/h HT</div></div>
       <div class="ligne"><div><span class="l-nom">Parties communes</span><span class="l-det">Halls, escaliers, local poubelles</span></div><div class="l-prix">sur devis</div></div>
       <div class="ligne"><div><span class="l-nom">Nettoyage après chantier</span><span class="l-det">Remise en état avant livraison</span></div><div class="l-prix">dès 4 €/m² HT</div></div>
-      <div class="ligne"><div><span class="l-nom">Vitrerie</span><span class="l-det">Intérieur et extérieur jusqu'à 3,50 m</span></div><div class="l-prix">dès 4 €/m² HT</div></div>
-      <div class="ligne"><div><span class="l-nom">Désinfection</span><span class="l-det">Protocole virucide, fiche produit fournie</span></div><div class="l-prix">dès 90 € HT</div></div>
+      <div class="ligne"><div><span class="l-nom">Vitrerie</span><span class="l-det">Jusqu'à 3,50 m</span></div><div class="l-prix">dès 4 €/m² HT</div></div>
       <div class="ligne"><div><span class="l-nom">Remise en état fin de bail</span><span class="l-det">Locaux commerciaux ou habitation</span></div><div class="l-prix">dès 6 €/m² HT</div></div>
-      <p class="note-bas">Prix HT, devis après visite. Pas d'engagement de durée : un mois de préavis, de votre côté comme du nôtre.</p>
+      <p class="note-bas">Prix HT, devis après visite. La surface seule ne dit rien : c'est la configuration des lieux qui décide du temps.</p>
     </div>
     <div class="volet">
       <h3>Compris dans le tarif horaire</h3>
@@ -312,31 +336,42 @@ footer a{color:var(--sur-sombre-accent)}
         <li>Papier et savon, au prix coûtant</li>
         <li>Interventions hors cahier</li>
         <li>Dimanche et jours fériés, +50 %</li>
-        <li>Décapage non prévu au contrat</li>
       </ul>
       <p class="note-bas">Chaque supplément fait l'objet d'un accord écrit avant intervention.</p>
     </div>
   </div>
 </section>
 
-<figure class="panneau">
-  <img src="/img/unsplash-photo-1627905646269-7f034dcc5738.jpg" alt="Nettoyage d'un poste de travail"/>
-  <div class="plaque">
-    <b>Passage du matin, 6 h 40</b>
-    <span>Postes dégagés essuyés, écrans laissés tranquilles.</span>
-  </div>
-</figure>
-
-<section class="questions" id="questions">
+<section class="avis" id="avis">
   <div class="env">
-    <div class="chapo"><span class="etiq">Questions</span><h2>Ce que demandent les gestionnaires</h2></div>
+    <div class="note">
+      <b>4,8</b>
+      <div class="et">★★★★★</div>
+      <span>29 avis Google</span>
+    </div>
+    <div>
+      <div class="etiq">Votre avis</div>
+      <h2>Vous gérez un site qu'on entretient ?</h2>
+      <p>Un QR code est collé dans le cahier de passage. Il mène ici. Si le travail vous convient, deux lignes sur Google aident le prochain gestionnaire à choisir. Si quelque chose cloche, dites-le-nous directement — on préfère corriger au passage suivant que le découvrir en ligne.</p>
+      <div class="chemins">
+        <a class="chemin plein" href="https://search.google.com/local/writereview?placeid=PLACE_ID_DU_CLIENT" target="_blank" rel="noopener">Laisser un avis Google</a>
+        <a class="chemin" href="tel:+33557000004">Nous signaler un problème</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect" id="questions">
+  <div class="env">
+    <div class="etiq">Questions</div>
+    <h2>Ce que demandent les gestionnaires</h2>
     <dl class="qgrille">
       <div class="qa">
         <dt>« Si votre agent est absent ? »</dt>
         <dd>Son remplaçant est nommé dès la signature et vient en doublon le premier mois. Il connaît vos locaux avant d'y aller seul.</dd>
       </div>
       <div class="qa">
-        <dt>« Vous passez en dehors des heures de bureau ? »</dt>
+        <dt>« Vous passez hors heures de bureau ? »</dt>
         <dd>C'est le cas le plus fréquent : entre 6 h et 8 h, ou après 18 h. En journée pour les copropriétés.</dd>
       </div>
       <div class="qa">
@@ -345,32 +380,22 @@ footer a{color:var(--sur-sombre-accent)}
       </div>
       <div class="qa">
         <dt>« Vos agents sont déclarés ? »</dt>
-        <dd>Tous en CDI. L'attestation URSSAF est jointe au devis et renouvelée tous les six mois sans que vous la réclamiez.</dd>
+        <dd>Tous en CDI. L'attestation URSSAF est jointe au devis et renouvelée sans que vous la réclamiez.</dd>
       </div>
     </dl>
   </div>
 </section>
 
-<section class="final" id="contact">
-  <div class="env">
-    <div class="f-grille">
-      <div class="note">
-        <b>4,8</b>
-        <div class="et">★★★★★</div>
-        <span>29 AVIS GOOGLE</span>
-      </div>
-      <div>
-        <span class="etiq">Contact</span>
-        <a class="c-tel" href="tel:+33557000004">05 57 00 00 04</a>
-        <p class="c-note">La visite dure vingt minutes et débouche sur un devis chiffré sous 48 h, cahier des tâches inclus.</p>
-        <p class="c-note">24 rue des Artisans, 33820 Saint-Ciers-sur-Gironde</p>
-      </div>
+<section class="contact" id="contact">
+  <img src="/img/n-hall.jpg" alt="Hall d'entrée d'un immeuble professionnel" width="1300" height="867" loading="lazy" decoding="async"/>
+  <div class="c-voile">
+    <div class="env">
+      <div class="etiq">Demander une visite</div>
+      <a class="c-tel" href="tel:+33557000004">05 57 00 00 04</a>
+      <p class="c-note">La visite dure vingt minutes et débouche sur un devis chiffré sous 48 h, cahier des tâches inclus.</p>
       <div class="zone">
-        <div><b>Zone d'intervention</b></div>
-        <div>Saint-Ciers, Braud-et-Saint-Louis, Étauliers</div>
-        <div>Blaye, Cars, Berson, Cavignac</div>
-        <div>Saint-André-de-Cubzac et Bourg sur devis</div>
-        <div><b>Bureau</b> — 8 h à 17 h, du lundi au vendredi</div>
+        <span><b>Éclat Pro</b> — 24 rue des Artisans, 33820 Saint-Ciers-sur-Gironde</span>
+        <span>Saint-Ciers, Braud, Étauliers, Blaye, Cars, Berson, Cavignac</span>
       </div>
     </div>
   </div>
@@ -382,7 +407,6 @@ footer a{color:var(--sur-sombre-accent)}
     Site de démonstration réalisé par <a href="https://novaspot.fr" target="_blank" rel="noopener">NovaSpot</a>. Informations fictives.
   </div>
 </footer>
-
 
 <script>
 (function(){
