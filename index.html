@@ -81,40 +81,50 @@ img{max-width:100%;display:block}
 .etiq{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--eau)}
 
 .demo{background:var(--ardoise);color:var(--sur-ardoise);padding:.5rem 1rem;text-align:center;font-size:.72rem}
+/* bandeau de service, convention des sites d'artisans francais */
+.service{background:var(--blanc2);border-bottom:1px solid var(--trait);font-size:.74rem;color:var(--fer)}
+.service .env{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem 1.8rem;padding-block:.55rem}
+.service b{color:var(--encre);font-weight:600}
+.service .droite{margin-left:auto}
+@media(max-width:700px){.service .droite{margin-left:0}}
 .demo a{color:var(--sur-ardoise);font-weight:600}
 .demo b{color:var(--sur-ardoise)}
 
-.barre{position:sticky;top:0;z-index:20;background:var(--blanc);border-bottom:1px solid var(--trait);padding-block:.8rem}
+.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(10,16,14,.70);padding-block:.9rem}
 .b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
-.b-marque{font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;color:var(--encre);text-decoration:none;line-height:1.05;flex-shrink:0}
+.b-marque{font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;color:#F4F7F5;text-decoration:none;line-height:1.05;flex-shrink:0}
 .b-marque small{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:.56rem;font-weight:600;
-  letter-spacing:.24em;text-transform:uppercase;color:var(--fer);margin-top:.2rem}
+  letter-spacing:.24em;text-transform:uppercase;color:var(--sur-photo-doux);margin-top:.2rem}
 .b-liens{display:flex;gap:1.6rem;margin-left:auto}
-.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--encre-doux);
+.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--sur-photo-doux);
   text-decoration:none;padding-block:.3rem;border-bottom:1px solid transparent}
-.b-liens a:hover{color:var(--encre);border-bottom-color:var(--encre)}
-.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--eau);
-  color:var(--sur-eau);text-decoration:none;padding:.78rem 1.25rem;white-space:nowrap;border-radius:3px}
-.b-tel:hover{opacity:.85}
+.b-liens a:hover{color:#F4F7F5;border-bottom-color:#F4F7F5}
+.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--eau-photo);
+  color:#06231C;text-decoration:none;padding:.78rem 1.25rem;white-space:nowrap;border-radius:3px}
+.b-tel:hover{background:#F4F7F5}
 .b-court{display:none}
 @media(max-width:940px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
 @media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.04rem}.b-tel{padding:.66rem 1rem}}
 
-/* --- ouverture : pas de photo. Ce metier se vend sur la preuve, on
-       met donc le texte et les garanties avant le decor. L'image
-       vient apres, quand la confiance est posee. --- */
-.annonce{padding-block:clamp(3rem,8vw,6rem) clamp(2.4rem,5vw,3.6rem)}
-.annonce .env{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:3.5rem;align-items:end}
-.annonce .etiq{display:block;margin-bottom:1.2rem}
-.annonce h1{font-size:clamp(2rem,5.2vw,3.9rem);line-height:1.06;font-weight:600;max-width:15ch}
-.annonce h1 b{font-weight:600;color:var(--eau)}
-.a-sous{font-size:1rem;max-width:44ch}
-.action{display:inline-block;margin-top:1.5rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;background:var(--eau);color:var(--sur-eau);text-decoration:none;padding:1rem 1.8rem;border-radius:3px}
-.action:hover{opacity:.85}
-.a-note{margin-top:1.2rem;font-size:.85rem;color:var(--fer)}
-.a-note b{color:var(--encre);font-weight:600}
-@media(max-width:880px){.annonce .env{grid-template-columns:1fr;gap:1.6rem;align-items:start}}
+/* --- ouverture : titre en grand, action juste dessous --- */
+.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ouverture .env{position:relative;z-index:2;width:100%;display:flex;align-items:center;padding-block:5rem 3rem}
+.ouv-txt{background:#FFFFFF;padding:2.8rem 2.6rem 2.4rem;max-width:min(40rem,56%);border-radius:4px;
+  box-shadow:0 26px 60px -30px rgba(6,20,16,.55)}
+.ouv-txt .etiq{color:#0C6152}
+.ouverture h1{font-size:clamp(1.9rem,4vw,3.1rem);color:#111917;max-width:17ch;margin-top:.9rem;
+  line-height:1.08;font-weight:300}
+.ouverture h1 b{font-weight:700}
+.ouv-sous{color:#3D4643;margin-top:1.1rem;max-width:48ch;font-size:.97rem}
+.action{display:inline-block;margin-top:1.6rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;background:#0C6152;color:#F2F8F5;text-decoration:none;padding:1rem 1.8rem;border-radius:3px}
+.action:hover{opacity:.86}
+.ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2rem;margin-top:1.8rem;padding-top:1.1rem;
+  border-top:1px solid #D6DBD7;font-size:.82rem;color:#5B6461}
+.ouv-pied b{color:#111917;font-weight:600}
+@media(max-width:820px){.ouv-txt{max-width:none;padding:2rem 1.5rem 1.8rem}}
+@media(max-width:700px){.ouverture{min-height:86svh}.ouverture .env{padding-block:4.5rem 2.5rem}}
 
 /* --- les preuves, tout de suite --- */
 .preuves{background:var(--ardoise);color:var(--sur-ardoise-doux);padding-block:2.6rem}
@@ -139,12 +149,12 @@ h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.12;margin-top:.7rem;font-w
 @media(max-width:540px){.cahier{grid-template-columns:1fr}}
 
 /* --- bande photo --- */
-.bande{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--trait)}
+.bande{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait)}
 .bande figure{margin:0;position:relative;background:var(--blanc)}
 .bande img{width:100%;height:clamp(200px,26vw,330px);object-fit:cover}
 .bande figcaption{position:absolute;left:0;bottom:0;background:rgba(10,16,14,.88);color:#EDF1EE;
   font-size:.7rem;font-weight:600;letter-spacing:.06em;padding:.5rem .9rem}
-@media(max-width:760px){.bande{grid-template-columns:1fr 1fr}.bande figure:nth-child(4){display:none}}
+@media(max-width:760px){.bande{grid-template-columns:1fr 1fr}.bande figure:nth-child(3){display:none}}
 
 /* --- tarifs et perimetre --- */
 .argent{background:var(--blanc2);border-block:1px solid var(--trait);padding-block:4.6rem}
@@ -204,8 +214,8 @@ footer{background:var(--blanc);color:var(--fer);font-size:.76rem;padding-block:2
 footer a{color:var(--encre)}
 
 .b-theme{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;padding:0;
-  flex-shrink:0;cursor:pointer;background:none;color:var(--fer);border:1px solid currentColor;border-radius:99px;opacity:.8}
-.b-theme:hover{opacity:1;color:var(--encre)}
+  flex-shrink:0;cursor:pointer;background:none;color:var(--sur-photo-doux);border:1px solid currentColor;border-radius:99px;opacity:.85}
+.b-theme:hover{opacity:1;color:var(--sur-photo)}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -214,30 +224,38 @@ footer a{color:var(--encre)}
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<nav class="barre" aria-label="Accès rapide">
-  <div class="env b-in">
-    <a class="b-marque" href="#haut">Éclat Pro<small>Saint-Ciers-sur-Gironde</small></a>
-    <div class="b-liens">
-      <a href="#cahier">Le cahier</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#avis">Avis</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
-    <a class="b-tel" href="tel:+33557000004"><span class="b-long">05 57 00 00 04</span><span class="b-court">Appeler</span></a>
-  </div>
-</nav>
-
-<header class="annonce" id="haut">
+<div class="service">
   <div class="env">
-    <div>
-      <span class="etiq">Bureaux · Copropriétés · Remise en état</span>
-      <h1>La même personne à chaque passage. <b>Vous saurez son prénom.</b></h1>
+    <span>24 rue des Artisans, 33820 Saint-Ciers-sur-Gironde</span>
+    <span class="droite"><b>05 57 00 00 04</b> · bureau ouvert 8 h – 17 h, du lundi au vendredi</span>
+  </div>
+</div>
+
+<header class="ouverture" id="haut">
+  <img src="/img/n-plateau.jpg" alt="Plateau de bureaux entretenu" width="1600" height="1067" fetchpriority="high"/>
+  <nav class="barre" aria-label="Accès rapide">
+    <div class="env b-in">
+      <a class="b-marque" href="#haut">Éclat Pro<small>Saint-Ciers-sur-Gironde</small></a>
+      <div class="b-liens">
+        <a href="#cahier">Le cahier</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
+      <a class="b-tel" href="tel:+33557000004"><span class="b-long">05 57 00 00 04</span><span class="b-court">Appeler</span></a>
     </div>
-    <div>
-      <p class="a-sous">Le turnover est la première cause de mécontentement dans ce métier. On fait l'inverse : un agent attitré par site, son remplaçant désigné dès la signature.</p>
+  </nav>
+  <div class="env">
+    <div class="ouv-txt">
+      <div class="etiq">Bureaux · Copropriétés · Remise en état</div>
+      <h1>La même personne à chaque passage. <b>Vous saurez son prénom.</b></h1>
+      <p class="ouv-sous">Le turnover est la première cause de mécontentement dans ce métier. On fait l'inverse : un agent attitré par site, son remplaçant désigné dès la signature.</p>
       <a class="action" href="#contact">Demander une visite</a>
-      <p class="a-note"><b>24 rue des Artisans</b>, Saint-Ciers-sur-Gironde · <b>4,8</b> ★★★★★ 29 avis</p>
+      <div class="ouv-pied">
+        <span><b>24 rue des Artisans</b>, Saint-Ciers-sur-Gironde</span>
+        <span><b>4,8</b> ★★★★★ · 29 avis</span>
+      </div>
     </div>
   </div>
 </header>
@@ -303,7 +321,6 @@ footer a{color:var(--encre)}
 </section>
 
 <div class="bande">
-  <figure><img src="/img/n-plateau.jpg" alt="Plateau de bureaux entretenu" width="1600" height="1067" loading="lazy" decoding="async"/><figcaption>Plateaux de bureaux</figcaption></figure>
   <figure><img src="/img/n-couloir.jpg" alt="Couloir vitré d'immeuble de bureaux" width="1300" height="867" loading="lazy" decoding="async"/><figcaption>Parties communes</figcaption></figure>
   <figure><img src="/img/n-poste.jpg" alt="Nettoyage d'un poste de travail" width="1300" height="867" loading="lazy" decoding="async"/><figcaption>Postes dégagés</figcaption></figure>
   <figure><img src="/img/n-chariot.jpg" alt="Chariot d'entretien dans un couloir" width="1100" height="1650" loading="lazy" decoding="async"/><figcaption>Passage du matin</figcaption></figure>
