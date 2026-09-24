@@ -84,39 +84,37 @@ img{max-width:100%;display:block}
 .demo a{color:var(--sur-ardoise);font-weight:600}
 .demo b{color:var(--sur-ardoise)}
 
-.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(10,16,14,.70);padding-block:.9rem}
+.barre{position:sticky;top:0;z-index:20;background:var(--blanc);border-bottom:1px solid var(--trait);padding-block:.8rem}
 .b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
-.b-marque{font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;color:#F4F7F5;text-decoration:none;line-height:1.05;flex-shrink:0}
+.b-marque{font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;color:var(--encre);text-decoration:none;line-height:1.05;flex-shrink:0}
 .b-marque small{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:.56rem;font-weight:600;
-  letter-spacing:.24em;text-transform:uppercase;color:var(--sur-photo-doux);margin-top:.2rem}
+  letter-spacing:.24em;text-transform:uppercase;color:var(--fer);margin-top:.2rem}
 .b-liens{display:flex;gap:1.6rem;margin-left:auto}
-.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--sur-photo-doux);
+.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--encre-doux);
   text-decoration:none;padding-block:.3rem;border-bottom:1px solid transparent}
-.b-liens a:hover{color:#F4F7F5;border-bottom-color:#F4F7F5}
-.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--eau-photo);
-  color:#06231C;text-decoration:none;padding:.78rem 1.25rem;white-space:nowrap;border-radius:3px}
-.b-tel:hover{background:#F4F7F5}
+.b-liens a:hover{color:var(--encre);border-bottom-color:var(--encre)}
+.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--eau);
+  color:var(--sur-eau);text-decoration:none;padding:.78rem 1.25rem;white-space:nowrap;border-radius:3px}
+.b-tel:hover{opacity:.85}
 .b-court{display:none}
 @media(max-width:940px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
 @media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.04rem}.b-tel{padding:.66rem 1rem}}
 
-/* --- ouverture : titre en grand, action juste dessous --- */
-.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
-.ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ouv-txt{position:relative;z-index:2;width:100%;padding-block:4.5rem 4.5rem;
-  background:linear-gradient(to top,rgba(10,16,14,.90),rgba(10,16,14,.70))}
-.ouv-txt .etiq{color:var(--eau-photo)}
-.ouverture h1{font-size:clamp(2.2rem,5.4vw,4.2rem);color:var(--sur-photo);max-width:17ch;margin-top:1rem;
-  line-height:1.06;font-weight:300}
-.ouverture h1 b{font-weight:700}
-.ouv-sous{color:var(--sur-photo-doux);margin-top:1.2rem;max-width:50ch;font-size:1rem}
-.action{display:inline-block;margin-top:1.8rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;background:var(--eau-photo);color:#06231C;text-decoration:none;padding:1rem 1.8rem;border-radius:3px}
-.action:hover{background:#F4F7F5}
-.ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.4rem;margin-top:2rem;padding-top:1.2rem;
-  border-top:1px solid rgba(244,247,245,.3);font-size:.83rem;color:var(--sur-photo-doux)}
-.ouv-pied b{color:var(--sur-photo);font-weight:600}
-@media(max-width:700px){.ouverture{min-height:88svh}.ouv-txt{padding-block:3.2rem 3rem}}
+/* --- ouverture : pas de photo. Ce metier se vend sur la preuve, on
+       met donc le texte et les garanties avant le decor. L'image
+       vient apres, quand la confiance est posee. --- */
+.annonce{padding-block:clamp(3rem,8vw,6rem) clamp(2.4rem,5vw,3.6rem)}
+.annonce .env{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:3.5rem;align-items:end}
+.annonce .etiq{display:block;margin-bottom:1.2rem}
+.annonce h1{font-size:clamp(2rem,5.2vw,3.9rem);line-height:1.06;font-weight:600;max-width:15ch}
+.annonce h1 b{font-weight:600;color:var(--eau)}
+.a-sous{font-size:1rem;max-width:44ch}
+.action{display:inline-block;margin-top:1.5rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;background:var(--eau);color:var(--sur-eau);text-decoration:none;padding:1rem 1.8rem;border-radius:3px}
+.action:hover{opacity:.85}
+.a-note{margin-top:1.2rem;font-size:.85rem;color:var(--fer)}
+.a-note b{color:var(--encre);font-weight:600}
+@media(max-width:880px){.annonce .env{grid-template-columns:1fr;gap:1.6rem;align-items:start}}
 
 /* --- les preuves, tout de suite --- */
 .preuves{background:var(--ardoise);color:var(--sur-ardoise-doux);padding-block:2.6rem}
@@ -141,12 +139,12 @@ h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.12;margin-top:.7rem;font-w
 @media(max-width:540px){.cahier{grid-template-columns:1fr}}
 
 /* --- bande photo --- */
-.bande{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait)}
+.bande{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--trait)}
 .bande figure{margin:0;position:relative;background:var(--blanc)}
 .bande img{width:100%;height:clamp(200px,26vw,330px);object-fit:cover}
 .bande figcaption{position:absolute;left:0;bottom:0;background:rgba(10,16,14,.88);color:#EDF1EE;
   font-size:.7rem;font-weight:600;letter-spacing:.06em;padding:.5rem .9rem}
-@media(max-width:760px){.bande{grid-template-columns:1fr 1fr}.bande figure:nth-child(3){display:none}}
+@media(max-width:760px){.bande{grid-template-columns:1fr 1fr}.bande figure:nth-child(4){display:none}}
 
 /* --- tarifs et perimetre --- */
 .argent{background:var(--blanc2);border-block:1px solid var(--trait);padding-block:4.6rem}
@@ -206,8 +204,8 @@ footer{background:var(--blanc);color:var(--fer);font-size:.76rem;padding-block:2
 footer a{color:var(--encre)}
 
 .b-theme{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;padding:0;
-  flex-shrink:0;cursor:pointer;background:none;color:var(--sur-photo-doux);border:1px solid currentColor;border-radius:99px;opacity:.85}
-.b-theme:hover{opacity:1;color:var(--sur-photo)}
+  flex-shrink:0;cursor:pointer;background:none;color:var(--fer);border:1px solid currentColor;border-radius:99px;opacity:.8}
+.b-theme:hover{opacity:1;color:var(--encre)}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -216,31 +214,30 @@ footer a{color:var(--encre)}
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<header class="ouverture" id="haut">
-  <img src="/img/n-plateau.jpg" alt="Plateau de bureaux entretenu" width="1600" height="1067" fetchpriority="high"/>
-  <nav class="barre" aria-label="Accès rapide">
-    <div class="env b-in">
-      <a class="b-marque" href="#haut">Éclat Pro<small>Saint-Ciers-sur-Gironde</small></a>
-      <div class="b-liens">
-        <a href="#cahier">Le cahier</a>
-        <a href="#tarifs">Tarifs</a>
-        <a href="#avis">Avis</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
-      <a class="b-tel" href="tel:+33557000004"><span class="b-long">05 57 00 00 04</span><span class="b-court">Appeler</span></a>
+<nav class="barre" aria-label="Accès rapide">
+  <div class="env b-in">
+    <a class="b-marque" href="#haut">Éclat Pro<small>Saint-Ciers-sur-Gironde</small></a>
+    <div class="b-liens">
+      <a href="#cahier">Le cahier</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
     </div>
-  </nav>
-  <div class="ouv-txt">
-    <div class="env">
-      <div class="etiq">Bureaux · Copropriétés · Remise en état</div>
+    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
+    <a class="b-tel" href="tel:+33557000004"><span class="b-long">05 57 00 00 04</span><span class="b-court">Appeler</span></a>
+  </div>
+</nav>
+
+<header class="annonce" id="haut">
+  <div class="env">
+    <div>
+      <span class="etiq">Bureaux · Copropriétés · Remise en état</span>
       <h1>La même personne à chaque passage. <b>Vous saurez son prénom.</b></h1>
-      <p class="ouv-sous">Le turnover est la première cause de mécontentement dans ce métier. On fait l'inverse : un agent attitré par site, son remplaçant désigné dès la signature.</p>
+    </div>
+    <div>
+      <p class="a-sous">Le turnover est la première cause de mécontentement dans ce métier. On fait l'inverse : un agent attitré par site, son remplaçant désigné dès la signature.</p>
       <a class="action" href="#contact">Demander une visite</a>
-      <div class="ouv-pied">
-        <span><b>24 rue des Artisans</b>, Saint-Ciers-sur-Gironde</span>
-        <span><b>4,8</b> ★★★★★ · 29 avis</span>
-      </div>
+      <p class="a-note"><b>24 rue des Artisans</b>, Saint-Ciers-sur-Gironde · <b>4,8</b> ★★★★★ 29 avis</p>
     </div>
   </div>
 </header>
@@ -306,6 +303,7 @@ footer a{color:var(--encre)}
 </section>
 
 <div class="bande">
+  <figure><img src="/img/n-plateau.jpg" alt="Plateau de bureaux entretenu" width="1600" height="1067" loading="lazy" decoding="async"/><figcaption>Plateaux de bureaux</figcaption></figure>
   <figure><img src="/img/n-couloir.jpg" alt="Couloir vitré d'immeuble de bureaux" width="1300" height="867" loading="lazy" decoding="async"/><figcaption>Parties communes</figcaption></figure>
   <figure><img src="/img/n-poste.jpg" alt="Nettoyage d'un poste de travail" width="1300" height="867" loading="lazy" decoding="async"/><figcaption>Postes dégagés</figcaption></figure>
   <figure><img src="/img/n-chariot.jpg" alt="Chariot d'entretien dans un couloir" width="1100" height="1650" loading="lazy" decoding="async"/><figcaption>Passage du matin</figcaption></figure>
