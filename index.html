@@ -71,8 +71,11 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4rem}
+/* Base de lecture : 1rem = 17 px, texte courant a 16 px. Les clients de ces
+   artisans lisent souvent sur telephone, et pas tous avec de bons yeux. */
+html{font-size:106.25%}
 body{background:var(--blanc);color:var(--encre-doux);font-family:'IBM Plex Sans',system-ui,sans-serif;
-  font-size:15px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'Sora',system-ui,sans-serif;color:var(--encre);letter-spacing:-.02em}
 a{color:var(--encre)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
@@ -327,7 +330,7 @@ footer a{color:var(--encre)}
 <div class="bande">
   <figure><img src="/img/n-couloir.jpg" alt="Couloir vitré d'immeuble de bureaux" width="1300" height="1950" loading="lazy" decoding="async"/><figcaption>Parties communes</figcaption></figure>
   <figure><img src="/img/n-poste.jpg" alt="Nettoyage d'un poste de travail" width="1300" height="867" loading="lazy" decoding="async"/><figcaption>Postes dégagés</figcaption></figure>
-  <figure><img src="/img/n-chariot.jpg" alt="Chariot d'entretien dans un couloir" width="1100" height="1650" loading="lazy" decoding="async"/><figcaption>Passage du matin</figcaption></figure>
+  <figure><img src="/img/n-entree.jpg" alt="Seau de lavage et panneau sol mouillé dans le hall d'entrée d'un immeuble de bureaux, avant l'ouverture" width="1400" height="933" loading="lazy" decoding="async"/><figcaption>Passage du matin</figcaption></figure>
 </div>
 
 <section class="argent" id="tarifs">
